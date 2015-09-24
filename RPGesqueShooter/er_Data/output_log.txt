@@ -1,0 +1,58 @@
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M    (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     1972 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.206 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Gray\Documents\GitHub\CS3350-StarPower\RPGesqueShooter\er_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 658 -> priority: 1 
+  Thread -> id: 2de4 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 21.866327 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 626.
+Total: 1.828115 ms (FindLiveObjects: 0.104215 ms CreateObjectMapping: 0.058818 ms MarkObjects: 1.630342 ms  DeleteObjects: 0.032369 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.888722 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 262.
+Total: 0.733456 ms (FindLiveObjects: 0.072240 ms CreateObjectMapping: 0.039080 ms MarkObjects: 0.574370 ms  DeleteObjects: 0.045791 ms)
+
+Hit Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hit Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hit Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hit Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hit Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+

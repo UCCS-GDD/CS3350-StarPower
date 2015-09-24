@@ -81,7 +81,7 @@ namespace Assets.Scripts
             panel = SpreadPanel.GetComponent<SliderInputPanel>();
             panel.transform.FindChild("Slider").GetComponent<Slider>().value = weapon.ProjectileSpread;
         }
-  
+
         public void OnFireModeChanged()
         {
             if (FireModeSingle.isOn)
