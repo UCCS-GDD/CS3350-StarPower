@@ -1,0 +1,1 @@
+Suggested Animation Speed Per Frame: 40ms
