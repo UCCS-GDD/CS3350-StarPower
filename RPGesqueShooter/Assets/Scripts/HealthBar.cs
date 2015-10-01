@@ -10,6 +10,6 @@ public class HealthBar : MonoBehaviour {
 	void FixedUpdate () {
         Image image = GetComponent<Image>();
 
-        image.fillAmount = Random.RandomRange(0f, 1f);
+        image.fillAmount = healthFill / 100;
 	}
 }

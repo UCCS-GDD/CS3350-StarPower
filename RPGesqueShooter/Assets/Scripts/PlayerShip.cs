@@ -39,6 +39,8 @@ namespace Assets.Scripts
         // FixedUpdate is called 50 times per second
         protected override void FixedUpdate()
         {
+            HealthBar.healthFill = CurrentHP;
+
             if (firePrimaryPressed == false && Input.GetAxis("Primary Fire") > 0 && primaryWeapons != null)
             {
                 firePrimaryPressed = true;

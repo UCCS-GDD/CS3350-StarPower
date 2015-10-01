@@ -17,7 +17,10 @@ public abstract class Projectile : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	
+	    if (transform.position.y < -5 || transform.position.y > 5)
+        {
+            Destroy(gameObject);
+        }
 	}
 
     void OnBecameInvisible()

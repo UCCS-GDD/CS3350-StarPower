@@ -67,14 +67,14 @@ public class Ship : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             collision.gameObject.GetComponent<Projectile>().ApplyDamageTo(this.gameObject);
-
-            Score.playerScore++;
         }
     }
 
     void OnBecameInvisible()
     {
         Destroy(gameObject);
+        
+        Score.playerScore++;
     }
 
     /// <summary>
