@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\EnemyShipTank.cs" />
      <Compile Include="Assets\Scripts\Engine.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
+     <Compile Include="Assets\Scripts\GameOverMenu.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HomeNavPanelScript.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />

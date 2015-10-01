@@ -1,6 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -40,6 +42,11 @@ namespace Assets.Scripts
         protected override void FixedUpdate()
         {
             HealthBar.healthFill = CurrentHP;
+
+            if (CurrentHP <= 0)
+            {
+                Application.LoadLevel("GameOver");
+            }
 
             if (firePrimaryPressed == false && Input.GetAxis("Primary Fire") > 0 && primaryWeapons != null)
             {
