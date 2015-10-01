@@ -10,6 +10,10 @@ namespace Assets.Scripts
     {
         bool isActive = false;
 
+        int phase = 0;
+
+        int timer = 0;
+
         protected override void Update()
         {
             base.Update();
@@ -26,7 +30,41 @@ namespace Assets.Scripts
 
         public void FixedUpdate()
         {
-            transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, -.05f), speed);
+            switch (phase)
+            {
+                case 0:
+                    transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(.05f, -.05f), speed);
+                    break;
+                case 1:
+                    transform.position = Vector3.Lerp(transform.position, transform.position, speed);
+                    break;
+                case 2:
+                    transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(-.05f, -.05f), speed);
+                    break;
+                case 3:
+                    transform.position = Vector3.Lerp(transform.position, transform.position, speed);
+                    break;
+                default:
+                    break;
+            }
+
+            if (timer > 50)
+            {
+                if (phase == 3)
+                {
+                    phase = 0;
+                }
+                else
+                {
+                    phase++;
+                }
+
+                timer = 0;
+            }
+            else
+            {
+                timer++;
+            }
         }
 
         public void OnBecameVisible()

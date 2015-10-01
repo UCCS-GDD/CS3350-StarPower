@@ -41,12 +41,9 @@ namespace Assets.Scripts
         // FixedUpdate is called 50 times per second
         protected override void FixedUpdate()
         {
-            HealthBar.healthFill = CurrentHP;
 
-            if (CurrentHP <= 0)
-            {
-                Application.LoadLevel("GameOver");
-            }
+
+            HealthBar.healthFill = CurrentHP;
 
             if (firePrimaryPressed == false && Input.GetAxis("Primary Fire") > 0 && primaryWeapons != null)
             {

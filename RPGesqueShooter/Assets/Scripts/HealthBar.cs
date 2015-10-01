@@ -11,5 +11,18 @@ public class HealthBar : MonoBehaviour {
         Image image = GetComponent<Image>();
 
         image.fillAmount = healthFill / 100;
+        
+
+        if (GameObject.Find("PlayerRef") == null)
+        {
+            Application.LoadLevel("GameOver");
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Application.LoadLevel("HomeScreen");
+        }
+
 	}
 }
