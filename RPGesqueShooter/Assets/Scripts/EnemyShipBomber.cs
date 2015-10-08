@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace Assets.Scripts
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            if (Vector3.Distance(transform.position, player.transform.position) > 1)
+            if (Vector3.Distance(transform.position, player.transform.position) > 5f)
             {
                 switch (phase)
                 {
@@ -54,7 +55,7 @@ namespace Assets.Scripts
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position, player.transform.position, 3f);
+                StartCoroutine(MoveToPlayer(player, 5f));
             }
 
             if (timer > 50)
@@ -79,6 +80,20 @@ namespace Assets.Scripts
         public void OnBecameVisible()
         {
             isActive = true;
-        }       
+        }
+
+        public IEnumerator MoveToPlayer(GameObject player, float time)
+        {
+            // zero the time
+            float currentTime = 0.0f;
+
+            do
+            {
+                // scale up and increase time each frame
+                transform.position = Vector3.Lerp(transform.position, player.transform.position, currentTime / time);
+                currentTime += Time.deltaTime;
+                yield return null;
+            } while (currentTime <= time);
+        }
     }
 }

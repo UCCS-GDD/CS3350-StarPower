@@ -16,6 +16,8 @@ namespace Assets.Scripts
         bool firePrimaryPressed = false;
         bool fireSecondaryPressed = false;
 
+        public AudioClip fireSound;
+
         protected List<Weapon> secondaryWeapons = new List<Weapon>();
 
         protected void Awake()
@@ -50,6 +52,7 @@ namespace Assets.Scripts
                 firePrimaryPressed = true;
                 foreach (var weapon in primaryWeapons)
                     weapon.FireBegin();
+                //SoundManager.instance.PlaySingle(fireSound);
             }
             if (firePrimaryPressed && Input.GetAxis("Primary Fire") == 0)
             {

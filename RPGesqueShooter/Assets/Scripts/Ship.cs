@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+public enum ShipType
+{
+    Player,
+    Enemy
+}
+
 public class Ship : MonoBehaviour 
 {
     public Weapon PrimaryWeapon;
@@ -61,12 +67,23 @@ public class Ship : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            collision.gameObject.GetComponent<Projectile>().ApplyDamageTo(this.gameObject);
+            //Projectile temp = collision.gameObject.GetComponent<Projectile>();
+
+            //if (temp.source.GetType() != gameObject.GetType())
+            //{
+                collision.gameObject.GetComponent<Projectile>().ApplyDamageTo(this.gameObject);
+            //}
+        }
+
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            collision.gameObject.GetComponent<Ship>().CurrentHP -= 10;
+            CurrentHP -= 10;
         }
     }
 
