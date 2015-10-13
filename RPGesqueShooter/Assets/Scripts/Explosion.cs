@@ -8,8 +8,10 @@ namespace Assets.Scripts
 {
     class Explosion : MonoBehaviour
     {
+        // Animation is over
         public void AnimDone()
         {
+            // destroys the gameObject
             Destroy(gameObject);
         }
     }
