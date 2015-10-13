@@ -31,7 +31,7 @@ namespace Assets.Scripts
         Toggle isBurstFire;
         Toggle isAutoFire;
 
-        // sliders which can be moved from minimum to maximum
+        // sliders which can be moved from minimum to maximum value
         // projectileCount, spread, burstFireCount, cooldown, refireRate
         Slider projectileCount;
         Slider spread;

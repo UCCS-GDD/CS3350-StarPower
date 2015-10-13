@@ -41,6 +41,7 @@ namespace Assets.Scripts
                         ship.CurrentHP -= damage;
                     }
                     break;
+
                 // deafult case
                 default:
                     break;

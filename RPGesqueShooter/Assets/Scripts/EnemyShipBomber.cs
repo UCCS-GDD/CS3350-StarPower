@@ -13,6 +13,7 @@ namespace Assets.Scripts
         // bool variable for isActive
         bool isActive = false;
 
+        // int variable for the pahse of the game
         int phase = 0;
 
         // int variable for timer of game

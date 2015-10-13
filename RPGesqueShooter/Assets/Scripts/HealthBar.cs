@@ -29,6 +29,5 @@ public class HealthBar : MonoBehaviour
         {
             Application.LoadLevel("HomeScreen");
         }
-
     }
 }
