@@ -7,16 +7,25 @@ public class LandPlayer : MonoBehaviour
     float inputAxisX;
     float inputAxisY;
 
+    public Rigidbody2D projectile;
+
 	// Use this for initialization
 	void Start () 
     {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-	
+        // if mouse button is down
+        // fire gun 
+        if(Input.GetButtonDown("Primary Fire"))
+        {
+            Rigidbody2D clone;
+            clone = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
+            clone.velocity = transform.TransformDirection(Vector3.up * 10);
+        }
 	}
 
     // FixedUpdate is called 50 times per second
@@ -26,7 +35,8 @@ public class LandPlayer : MonoBehaviour
         inputAxisX = Input.GetAxis("Move Horizontal");
         inputAxisY = Input.GetAxis("Move Vertical");
 
-        // 
+        // linearly interpolates between the two vectors
+        // the position of the object depending the the input
         if (inputAxisX != 0 || inputAxisY != 0)
         {
             transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(inputAxisX, inputAxisY), 5);
