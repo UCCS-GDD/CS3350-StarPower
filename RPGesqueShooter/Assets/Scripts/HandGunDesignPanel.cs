@@ -92,28 +92,29 @@ namespace Assets.Scripts
             float newValue = 0;
 
             // gets the RefireRate panel
-            //
+            // set the refire rate to the panel value
             panel = RefireRate.GetComponent<SliderInputPanel>();
             refireRate = panel.transform.FindChild("Slider").GetComponent<Slider>().value;
 
             // gets the ReloadSpeed
-            // 
+            // set reload speed to panel value
             panel = ReloadSpeed.GetComponent<SliderInputPanel>();
             reloadSpeed = panel.transform.FindChild("Slider").GetComponent<Slider>().value;
 
             // gets the ClipSize
-            //
+            // set clip size to panel value
             panel = ClipSize.GetComponent<SliderInputPanel>();
             clipSize = panel.transform.FindChild("Slider").GetComponent<Slider>().value;
 
-            //
+            // updates the range for the panel
             panel.UpdateRange(Mathf.Round(newValue), panel.Max);
 
-            //
+            // Updates the test weapon with the given information
             UpdateTestWeapon(refireRate, reloadSpeed, mode, clipSize);
         }
 
-        // 
+        // Update Test Weapon
+        // This allows the player to see what their weapon will do in combat
         public void UpdateTestWeapon(float refireRate, float reloadSpeed, WeaponFireMode mode, float clipSize)
         {
             //TestWeapon.GetComponent<TestWeapon>().UpdateGun(refireRate, reloadSpeed, mode, clipSize);
