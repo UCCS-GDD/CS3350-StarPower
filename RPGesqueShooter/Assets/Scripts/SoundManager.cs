@@ -1,59 +1,69 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum SoundEffect
+{
+    laser,
+    menuSelect,
+    shieldDown,
+    shieldUp,
+    explosion
+}
+
 public class SoundManager : MonoBehaviour
 {
 
-        //public AudioSource efxSource;               
-        //public AudioSource musicSource;                 
-        //public static SoundManager instance = null;    
-        //public float lowPitchRange = .95f;              
-        //public float highPitchRange = 1.05f;            
-        
-        
-        //void Awake ()
-        //{
-        //    //Check if there is already an instance of SoundManager
-        //    if (instance == null)
-        //        //if not, set it to this.
-        //        instance = this;
-        //    //If instance already exists:
-        //    else if (instance != this)
-        //        //Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
-        //        Destroy (gameObject);
-            
-        //    //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        //    DontDestroyOnLoad (gameObject);
-        //}
-        
-        
-        ////Used to play single sound clips.
-        //public void PlaySingle(AudioClip clip)
-        //{
-        //    //Set the clip of our efxSource audio source to the clip passed in as a parameter.
-        //    efxSource.clip = clip;
-            
-        //    //Play the clip.
-        //    efxSource.Play ();
-        //}
-        
-        
-        ////RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
-        //public void RandomizeSfx (params AudioClip[] clips)
-        //{
-        //    //Generate a random number between 0 and the length of our array of clips passed in.
-        //    int randomIndex = Random.Range(0, clips.Length);
-            
-        //    //Choose a random pitch to play back our clip at between our high and low pitch ranges.
-        //    float randomPitch = Random.Range(lowPitchRange, highPitchRange);
-            
-        //    //Set the pitch of the audio source to the randomly chosen pitch.
-        //    efxSource.pitch = randomPitch;
-            
-        //    //Set the clip to the clip at our randomly chosen index.
-        //    efxSource.clip = clips[randomIndex];
-            
-        //    //Play the clip.
-        //    efxSource.Play();
-        //}
+    public static SoundManager instance = null;
+
+    public AudioClip laser;
+    public AudioClip menuSelect;
+    public AudioClip shieldDown;
+    public AudioClip shieldUp;
+    public AudioClip explosion;
+
+    private AudioSource source;
+    private AudioClip clip;
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+        source = GetComponent<AudioSource>();
+    }
+
+    public void PlaySound(SoundEffect effect, float vol)
+    {
+        source.pitch = 1f;
+
+        if (effect == SoundEffect.explosion)
+        {
+            source.PlayOneShot(explosion, vol);
+        }
+        else if (effect == SoundEffect.laser)
+        {
+            source.PlayOneShot(laser, vol);
+        }
+        else if (effect == SoundEffect.menuSelect)
+        {
+            source.PlayOneShot(menuSelect, vol);
+        }
+        else if (effect == SoundEffect.shieldDown)
+        {
+            source.PlayOneShot(shieldDown, vol);
+        }
+        else if (effect == SoundEffect.shieldUp)
+        {
+            source.PlayOneShot(shieldUp, vol);
+        }
+    }
+
 }

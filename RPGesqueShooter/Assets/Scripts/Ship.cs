@@ -21,6 +21,7 @@ public class Ship : MonoBehaviour
     public int MaxHP;
     public float CurrentHP;
     public int Bounty;
+    public bool shieldUp;
 
     protected float speed;
     protected List<Weapon> primaryWeapons = new List<Weapon>();
@@ -45,6 +46,8 @@ public class Ship : MonoBehaviour
 	// Update is called once per frame
     protected virtual void Update() 
     {
+        
+
         if (Shield != null && Shield.CurrentShields > 0)
         {
             shieldCollider.enabled = true;
@@ -59,6 +62,12 @@ public class Ship : MonoBehaviour
             Destroy(gameObject);
             Instantiate(DeathAnim, transform.position, transform.rotation);
         }
+
+        //if (Shield.CurrentShields <= 0 && shieldUp)
+        //{
+        //    shieldUp = false;
+        //    SoundManager.instance.PlaySound(SoundEffect.shieldDown, 1f);
+        //}
 	}
 
     // FixedUpdate is called 50 times per second
@@ -90,7 +99,8 @@ public class Ship : MonoBehaviour
     void OnBecameInvisible()
     {
         Destroy(gameObject);
-        
+
+        SoundManager.instance.PlaySound(SoundEffect.explosion, 1f);        
         Score.playerScore++;
     }
 
