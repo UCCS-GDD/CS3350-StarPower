@@ -113,7 +113,7 @@ namespace Assets.Scripts
         // opens primary weapon menu
         public void ClickPrimaryWeapon()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
             // check the different menu modes
             switch (mode)
@@ -152,7 +152,7 @@ namespace Assets.Scripts
         // opens secondary weapon menu
         public void ClickSecondaryWeapon()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
             // check the different menu modes
             switch (mode)
@@ -191,14 +191,14 @@ namespace Assets.Scripts
         // opens the shield menu
         public void ClickShield()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
         }
 
         // When you click continue on the game
         // Go to the first level
         public void ClickContinue()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
             // check the different menu modes
             switch (mode)

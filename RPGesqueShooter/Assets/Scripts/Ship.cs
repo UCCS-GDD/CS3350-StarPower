@@ -100,7 +100,7 @@ public class Ship : MonoBehaviour
     {
         Destroy(gameObject);
 
-        SoundManager.instance.PlaySound(SoundEffect.explosion, 1f);        
+        SoundManager.instance.PlaySound(SoundEffect.explosion, GameData.explosionVolume);        
         Score.playerScore++;
     }
 

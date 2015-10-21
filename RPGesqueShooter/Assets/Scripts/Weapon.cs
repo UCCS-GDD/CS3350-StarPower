@@ -125,7 +125,7 @@ public class Weapon : MonoBehaviour
             proj.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(weaponAngle * Mathf.Deg2Rad) * proj.velocity, Mathf.Sin(weaponAngle * Mathf.Deg2Rad) * proj.velocity);
             proj.source = transform.parent.transform.parent.gameObject;
             
-            SoundManager.instance.PlaySound(SoundEffect.laser, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.laser, GameData.laserVolume);
         }
     }
 }

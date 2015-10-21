@@ -7,7 +7,7 @@ public class GameOverMenu : MonoBehaviour
     public void MainMenu()
     {
         // load the main menu scene
-        SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+        SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
         Application.LoadLevel("MainMenu");
     }
 }

@@ -10,19 +10,19 @@ namespace Assets.Scripts
     {
         public void StartGame()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
             Application.LoadLevel("HomeScreen");
         }
 
         public void QuitGame()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
             Application.Quit();
         }
 
         public void GetHelp()
         {
-            SoundManager.instance.PlaySound(SoundEffect.menuSelect, 1f);
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
         }
     }
 }
