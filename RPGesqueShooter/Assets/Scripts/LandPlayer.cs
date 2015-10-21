@@ -18,12 +18,12 @@ public class LandPlayer : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        // if mouse button is down
-        // fire gun 
+        // if mouse button is down, fire gun
         if(Input.GetButtonDown("Primary Fire"))
         {
             Rigidbody2D clone;
             clone = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody2D;
+            clone.transform.position = new Vector2(clone.position.x, clone.position.y + 1);
             clone.velocity = transform.TransformDirection(Vector3.up * 10);
         }
 	}
