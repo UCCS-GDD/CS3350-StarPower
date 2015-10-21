@@ -110,6 +110,6 @@ public class Ship : MonoBehaviour
     /// <returns></returns>
     float CalculateSpeed()
     {
-        return 1f;
+        return GameData.playerMoveSpeed;
     }
 }
