@@ -115,6 +115,9 @@ namespace Assets.Scripts
         {
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
+            Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
+            temp.text = "Primary Weapon";            
+
             // check the different menu modes
             switch (mode)
             {
@@ -153,6 +156,9 @@ namespace Assets.Scripts
         public void ClickSecondaryWeapon()
         {
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+
+            Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
+            temp.text = "Secondary Weapon";
 
             // check the different menu modes
             switch (mode)

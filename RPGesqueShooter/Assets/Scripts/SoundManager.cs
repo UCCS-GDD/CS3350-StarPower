@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour
         {
             source.PlayOneShot(explosion, vol);
         }
-        else if (effect == SoundEffect.laser)
+        else if (effect == SoundEffect.laser && Application.loadedLevelName != "HomeScreen")
         {
             source.PlayOneShot(laser, vol);
         }
