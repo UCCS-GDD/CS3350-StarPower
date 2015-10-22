@@ -18,6 +18,11 @@ namespace Assets.Scripts
 
         // int variable for timer of game
         int timer = 0;
+        public void Awake()
+        {
+            this.MaxHP = GameData.bomberBaseHealth;
+            this.CurrentHP = this.MaxHP;
+        }
 
         // Update is called once per frame
         protected override void Update()

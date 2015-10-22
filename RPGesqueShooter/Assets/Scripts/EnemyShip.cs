@@ -12,6 +12,12 @@ namespace Assets.Scripts
         // bool variable for isActive
         bool isActive = false;
 
+        public void Awake()
+        {
+            this.MaxHP = GameData.defaultBaseHealth;
+            this.CurrentHP = this.MaxHP;
+        }
+
         // Update is called once per frame
         protected override void Update()
         {
