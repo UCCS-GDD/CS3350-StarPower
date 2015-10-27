@@ -18,9 +18,14 @@ namespace Assets.Scripts
 
         // int variable for timer of game
         int timer = 0;
+
+        // Used to inititalize any variables or game state before the game starts
         public void Awake()
         {
+            // set the MaxHP to the bomberBaseHealth
             this.MaxHP = GameData.bomberBaseHealth;
+
+            // set the CurrentHP to the MaxHP
             this.CurrentHP = this.MaxHP;
         }
 

@@ -113,8 +113,10 @@ namespace Assets.Scripts
         // opens primary weapon menu
         public void ClickPrimaryWeapon()
         {
+            // play menu sound
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
+            // set the text to say "Primary Weapon"
             Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
             temp.text = "Primary Weapon";            
 
@@ -155,8 +157,10 @@ namespace Assets.Scripts
         // opens secondary weapon menu
         public void ClickSecondaryWeapon()
         {
+            // Play menu sound
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
+            // set the text to say "Secondary Weapon"
             Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
             temp.text = "Secondary Weapon";
 

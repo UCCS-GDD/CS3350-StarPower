@@ -10,18 +10,18 @@ namespace Assets.Scripts
 {
     public class HandGunDesignPanel : MonoBehaviour
     {
-        // Variables for fire mode for weapon
+        // Toggle for the different FireModes
         Toggle FireModeSingle;
         Toggle FireModeBurst;
         Toggle FireModeAuto;
 
-        // GameObjects for gun
+        // GameObjects in which will be available for edit in the panel
         GameObject RefireRate;
         GameObject ReloadSpeed;
         GameObject ClipSize;
         GameObject AmmoType;
 
-        // TestWeapon to show player what their weapon will look like
+        // TestWeapon to show player what their weapon will be like
         public GameObject TestWeapon;
 
         // Use this for initialization
@@ -77,7 +77,7 @@ namespace Assets.Scripts
         // Updates the gun 
         public void UpdateGun()
         {
-            // Variables for slider input
+            // Variable for slider input
             SliderInputPanel panel;
 
             // Variables for gun
@@ -109,7 +109,7 @@ namespace Assets.Scripts
             // updates the range for the panel
             panel.UpdateRange(Mathf.Round(newValue), panel.Max);
 
-            // Updates the test weapon with the given information
+            // Updates the test weapon with the given parameters
             UpdateTestWeapon(refireRate, reloadSpeed, mode, clipSize);
         }
 

@@ -12,9 +12,13 @@ namespace Assets.Scripts
         // bool variable for isActive
         bool isActive = false;
 
+        // Used to inititalize any variables or game state before the game starts
         public void Awake()
         {
+            // set the MaxHP to the defaultBaseHealth
             this.MaxHP = GameData.defaultBaseHealth;
+
+            // set the currentHP to the MaxHP
             this.CurrentHP = this.MaxHP;
         }
 
