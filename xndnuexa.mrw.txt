@@ -1,0 +1,97 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	RPGesqueShooter/Assembly-CSharp.csproj
+	RPGesqueShooter/Assets/Scenes/MainMenu.unity
+	RPGesqueShooter/Assets/Scripts/GameData.cs
+	RPGesqueShooter/Library/CurrentMaximizeLayout.dwlt
+	RPGesqueShooter/Library/EditorUserBuildSettings.asset
+	RPGesqueShooter/Library/UnityAssemblies/UnityEditor.iOS.Extensions.Xcode.dll
+	RPGesqueShooter/Library/expandedItems
+	RPGesqueShooter/Library/metadata/00/00000000000000001000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000002000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000003000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000004100000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000005000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000005100000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000006000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000006100000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000007000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000008000000000000000
+	RPGesqueShooter/Library/metadata/00/00000000000000009000000000000000
+	RPGesqueShooter/Library/metadata/00/0000000000000000a000000000000000
+	RPGesqueShooter/Library/metadata/00/0000000000000000b000000000000000
+	RPGesqueShooter/Library/metadata/00/0000000000000000c000000000000000
+	RPGesqueShooter/Library/metadata/13/13249d0861aa1ff4481af19f85c1f367
+	RPGesqueShooter/Library/metadata/3f/3fb4bd72b681db74a8c8b02cdcfe7829.info
+	RPGesqueShooter/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7
+	RPGesqueShooter/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f
+	RPGesqueShooter/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba
+	RPGesqueShooter/Library/metadata/ea/ea3bc503bf6aae042ad8d5ddbe563bb6
+	RPGesqueShooter/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8
+	RPGesqueShooter/Library/shadercompiler-32bit-1.log
+	RPGesqueShooter/Library/shadercompiler-32bit-2.log
+	RPGesqueShooter/Library/shadercompiler-64bit-1.log
+	RPGesqueShooter/Library/shadercompiler-64bit-2.log
+	RPGesqueShooter/RPGesqueShooter.sln
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 6 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   RPGesqueShooter/Assembly-CSharp.csproj
+#	renamed:    RPGesqueShooter/Assets/Graphics/Textures/New Material.mat -> RPGesqueShooter/Assets/Graphics/Materials/Galaxy.mat
+#	renamed:    RPGesqueShooter/Assets/Graphics/Textures/New Material.mat.meta -> RPGesqueShooter/Assets/Graphics/Materials/Galaxy.mat.meta
+#	renamed:    RPGesqueShooter/Assets/Objects/Ships/Enemies/Boss/boss-arachnid.png -> RPGesqueShooter/Assets/Graphics/Sprites/boss-arachnid.png
+#	renamed:    RPGesqueShooter/Assets/Objects/Ships/Enemies/Boss/boss-arachnid.png.meta -> RPGesqueShooter/Assets/Graphics/Sprites/boss-arachnid.png.meta
+#	modified:   RPGesqueShooter/Assets/Graphics/Sprites/starship.png
+#	modified:   RPGesqueShooter/Assets/Graphics/Sprites/wideShip2.png
+#	modified:   RPGesqueShooter/Assets/Objects/Ships/Enemies/AlienEnemyBasic.prefab
+#	modified:   RPGesqueShooter/Assets/Objects/Ships/Enemies/AlienEnemyBomber.prefab
+#	new file:   RPGesqueShooter/Assets/Objects/Ships/Enemies/Boss/boss.prefab
+#	new file:   RPGesqueShooter/Assets/Objects/Ships/Enemies/Boss/boss.prefab.meta
+#	modified:   RPGesqueShooter/Assets/Objects/Ships/Enemies/EnemyBasicTank.prefab
+#	new file:   RPGesqueShooter/Assets/Scenes/BossLevel.unity
+#	new file:   RPGesqueShooter/Assets/Scenes/BossLevel.unity.meta
+#	modified:   RPGesqueShooter/Assets/Scenes/GameOver.unity
+#	modified:   RPGesqueShooter/Assets/Scenes/HomeScreen.unity
+#	new file:   RPGesqueShooter/Assets/Scripts/BossScript.cs
+#	new file:   RPGesqueShooter/Assets/Scripts/BossScript.cs.meta
+#	modified:   RPGesqueShooter/Assets/Scripts/EnemyShip.cs
+#	modified:   RPGesqueShooter/Assets/Scripts/GameData.cs
+#	new file:   RPGesqueShooter/Assets/Scripts/Scaling.cs
+#	new file:   RPGesqueShooter/Assets/Scripts/Scaling.cs.meta
+#	modified:   RPGesqueShooter/Assets/Scripts/Weapon.cs
+#	modified:   RPGesqueShooter/Library/shadercompiler-32bit-1.log
+#	modified:   RPGesqueShooter/Library/shadercompiler-32bit-2.log
+#	modified:   RPGesqueShooter/Library/shadercompiler-64bit-1.log
+#	modified:   RPGesqueShooter/Library/shadercompiler-64bit-2.log
+#	modified:   RPGesqueShooter/RPGesqueShooter.sln
+#	new file:   RPGesqueShooter/build_Data/level0
+#	new file:   RPGesqueShooter/build_Data/level1
+#	new file:   RPGesqueShooter/build_Data/level2
+#	new file:   RPGesqueShooter/build_Data/level3
+#	modified:   RPGesqueShooter/build_Data/mainData
+#	modified:   RPGesqueShooter/build_Data/output_log.txt
+#	modified:   RPGesqueShooter/build_Data/sharedassets0.assets
+#	new file:   RPGesqueShooter/build_Data/sharedassets0.resource
+#	new file:   RPGesqueShooter/build_Data/sharedassets1.assets
+#	new file:   RPGesqueShooter/build_Data/sharedassets2.assets
+#	new file:   RPGesqueShooter/build_Data/sharedassets2.resource
+#	new file:   RPGesqueShooter/build_Data/sharedassets3.assets
+#	new file:   RPGesqueShooter/build_Data/sharedassets3.resource
+#	renamed:    RPGesqueShooter/build_Data/sharedassets0.assets -> RPGesqueShooter/build_Data/sharedassets4.assets
+#
+
