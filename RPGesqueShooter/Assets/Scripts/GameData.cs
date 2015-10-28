@@ -44,15 +44,15 @@ public static class GameData {
     //
 
     // saves the current game data into a binary file
-    public void Save()
-    {
+   // public void Save()
+  //  {
 
-    }
+    //}
     
     // loads the previous game from a binary file
-    public void Load()
-    {
+  //  public void Load()
+  //  {
 
-    }
+  //  }
 
 }
