@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class GameData {
-
+public static class GameData
+{
     //
-	// enemy ship stats
+    // enemy ship stats
     public static float bomberEnemyMoveSpeed = 1f;
     public static float tankEnemyMoveSpeed = 1f;
     public static float defaultEnemyMoveSpeed = 1f;
@@ -12,6 +12,7 @@ public static class GameData {
     public static int bomberBaseHealth = 10;
     public static int tankBaseHealth = 80;
     public static int defaultBaseHealth = 20;
+    public static int deafultBossHealth = 100;
 
     public static int bomberLoot;           // cast these as actual loot later
     public static int tankLoot;
@@ -37,22 +38,42 @@ public static class GameData {
     public static float shieldDownVolume = 1f;
     public static float explosionVolume = 1f;
 
-    //
-    //
 
-    //
-    //
-
-    // saves the current game data into a binary file
+<<<<<<< HEAD
+    //// saves the current game data into a binary file
     //public void Save()
     //{
 
     //}
+
+    //// loads the previous game from a binary file
+    //public void Load()
+    //{
+=======
+    // saves the current game data into a binary file
+<<<<<<< HEAD
+    //public void Save()
+    //{
+=======
+   // public void Save()
+  //  {
+>>>>>>> origin/master
+
+    //}
     
     // loads the previous game from a binary file
+<<<<<<< HEAD
     //public void Load()
     //{
 
     //}
+=======
+  //  public void Load()
+  //  {
 
+  //  }
+>>>>>>> origin/master
+>>>>>>> origin/master
+
+    //}
 }
