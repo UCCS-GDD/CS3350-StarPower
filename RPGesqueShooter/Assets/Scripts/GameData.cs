@@ -37,43 +37,43 @@ public static class GameData
     public static float shieldUpVolume = 1f;
     public static float shieldDownVolume = 1f;
     public static float explosionVolume = 1f;
-
-
-<<<<<<< HEAD
-    //// saves the current game data into a binary file
-    //public void Save()
-    //{
-
-    //}
-
-    //// loads the previous game from a binary file
-    //public void Load()
-    //{
-=======
-    // saves the current game data into a binary file
-<<<<<<< HEAD
-    //public void Save()
-    //{
-=======
-   // public void Save()
-  //  {
->>>>>>> origin/master
-
-    //}
-    
-    // loads the previous game from a binary file
-<<<<<<< HEAD
-    //public void Load()
-    //{
-
-    //}
-=======
-  //  public void Load()
-  //  {
-
-  //  }
->>>>>>> origin/master
->>>>>>> origin/master
-
-    //}
 }
+
+//<<<<<<< HEAD
+//    //// saves the current game data into a binary file
+//    //public void Save()
+//    //{
+
+//    //}
+
+//    //// loads the previous game from a binary file
+//    //public void Load()
+//    //{
+//=======
+//    // saves the current game data into a binary file
+//<<<<<<< HEAD
+//    //public void Save()
+//    //{
+//=======
+//   // public void Save()
+//  //  {
+//>>>>>>> origin/master
+
+//    //}
+    
+//    // loads the previous game from a binary file
+//<<<<<<< HEAD
+//    //public void Load()
+//    //{
+
+//    //}
+//=======
+//  //  public void Load()
+//  //  {
+
+//  //  }
+//>>>>>>> origin/master
+//>>>>>>> origin/master
+
+//    //}
+//}
