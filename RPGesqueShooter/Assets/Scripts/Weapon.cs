@@ -142,6 +142,7 @@ public class Weapon : MonoBehaviour
 
             // set weaponAngle to a random range based on ProjectileSpread
             float weaponAngle = transform.rotation.eulerAngles.z + ((-ProjectileSpread / 2) + (ProjectileSpread / (ProjectileCount - 1)) * i);
+            if (ProjectileCount == 1) { weaponAngle = transform.rotation.eulerAngles.z; }
             // gets the RigidBody2D components to a new vector
             proj.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(weaponAngle * Mathf.Deg2Rad) * proj.velocity, Mathf.Sin(weaponAngle * Mathf.Deg2Rad) * proj.velocity);
             
