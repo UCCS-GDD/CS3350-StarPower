@@ -9,6 +9,14 @@ namespace Assets.Scripts
     // Inherits from the Ship class
     class EnemyShip : Ship
     {
+
+        SpriteRenderer renderer;
+
+        public Sprite fullHealth;
+        public Sprite reducedHealth;
+        public Sprite halfHealth;
+        public Sprite lowHealth;
+
         // bool variable for isActive
         bool isActive = false;
 
@@ -20,11 +28,32 @@ namespace Assets.Scripts
 
             // set the currentHP to the MaxHP
             this.CurrentHP = this.MaxHP;
+
+            // get the sprite renderer of this object
+            renderer = GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
         protected override void Update()
         {
+            // apply the correct sprite based on the current health
+            if (CurrentHP > (MaxHP * .75f))
+            {
+                renderer.sprite = fullHealth;
+            }
+            else if (CurrentHP <= (MaxHP * .75f) && CurrentHP > (MaxHP * .5f))
+            {
+                renderer.sprite = reducedHealth;
+            }
+            else if (CurrentHP <= (MaxHP * .5f) && CurrentHP > (MaxHP * .25f))
+            {
+                renderer.sprite = halfHealth;
+            }
+            else if (CurrentHP <= (MaxHP * .25))
+            {
+                renderer.sprite = lowHealth;
+            }
+
             // Calls the parent method
             base.Update();
 

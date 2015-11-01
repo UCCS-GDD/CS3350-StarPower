@@ -46,46 +46,52 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackdropScroll.cs" />
+     <Compile Include="Assets\Scripts\Backend\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Backend\Soundtrack.cs" />
+     <Compile Include="Assets\Scripts\Backend\SpawnEnemies.cs" />
      <Compile Include="Assets\Scripts\Beam.cs" />
      <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\BossScript.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
-     <Compile Include="Assets\Scripts\EnemyShip.cs" />
-     <Compile Include="Assets\Scripts\EnemyShipBomber.cs" />
-     <Compile Include="Assets\Scripts\EnemyShipTank.cs" />
+     <Compile Include="Assets\Scripts\Characters\EnemyShip.cs" />
+     <Compile Include="Assets\Scripts\Characters\EnemyShipBomber.cs" />
+     <Compile Include="Assets\Scripts\Characters\EnemyShipTank.cs" />
+     <Compile Include="Assets\Scripts\Characters\PlayerShip.cs" />
+     <Compile Include="Assets\Scripts\Characters\Ship.cs" />
+     <Compile Include="Assets\Scripts\Design\HandGunDesignPanel.cs" />
+     <Compile Include="Assets\Scripts\Design\HomeNavPanelScript.cs" />
+     <Compile Include="Assets\Scripts\Design\MainMenuScript.cs" />
+     <Compile Include="Assets\Scripts\Design\SliderInputPanel.cs" />
+     <Compile Include="Assets\Scripts\Design\WeaponDesignPanel.cs" />
      <Compile Include="Assets\Scripts\Engine.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\GameOverMenu.cs" />
-     <Compile Include="Assets\Scripts\HandGunDesignPanel.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
-     <Compile Include="Assets\Scripts\HomeNavPanelScript.cs" />
      <Compile Include="Assets\Scripts\LandPlayer.cs" />
      <Compile Include="Assets\Scripts\Levels\Level1_Main.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
-     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Plasma.cs" />
      <Compile Include="Assets\Scripts\PlayerData.cs" />
-     <Compile Include="Assets\Scripts\PlayerShip.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\Scaling.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\ShieldBar.cs" />
      <Compile Include="Assets\Scripts\ShieldModule.cs" />
-     <Compile Include="Assets\Scripts\Ship.cs" />
-     <Compile Include="Assets\Scripts\SliderInputPanel.cs" />
-     <Compile Include="Assets\Scripts\SoundManager.cs" />
-     <Compile Include="Assets\Scripts\Soundtrack.cs" />
-     <Compile Include="Assets\Scripts\SpawnEnemies.cs" />
      <Compile Include="Assets\Scripts\TestShip.cs" />
      <Compile Include="Assets\Scripts\TestWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
-     <Compile Include="Assets\Scripts\WeaponDesignPanel.cs" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
