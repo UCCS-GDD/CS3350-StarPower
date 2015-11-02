@@ -11,7 +11,7 @@ public static class GameData {
 
     public static int bomberBaseHealth = 10;
     public static int tankBaseHealth = 80;
-    public static int defaultBaseHealth = 20;
+    public static int defaultBaseHealth = 30;
 
     public static int bomberLoot;           // cast these as actual loot later
     public static int tankLoot;
