@@ -132,12 +132,11 @@ public class Ship : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         // if collision with with projectile
-        if (collision.gameObject.CompareTag("Projectile"))
+        if (collision.gameObject.CompareTag("Projectile") && type != collision.GetComponent<Projectile>().type)
         {
-            //  // get the projectile component
+                // get the projectile component
                 // apply damage to the specified gameObject
                 collision.gameObject.GetComponent<Projectile>().ApplyDamageTo(this.gameObject);
-            //}
         }
         // if collision is with Ship
         if (collision.gameObject.CompareTag("Ship"))
@@ -171,5 +170,10 @@ public class Ship : MonoBehaviour
     float CalculateSpeed()
     {
         return GameData.playerMoveSpeed;
+    }
+
+    public ShipType GetShipType
+    {
+        get { return type; }
     }
 }

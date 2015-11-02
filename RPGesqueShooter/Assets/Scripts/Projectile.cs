@@ -9,6 +9,9 @@ public abstract class Projectile : MonoBehaviour
 
     // GameObject variable for source object
     public GameObject source;
+   
+    // get the shiptype in an enum
+    public ShipType type;
 
 	// Use this for initialization
 	void Start () 

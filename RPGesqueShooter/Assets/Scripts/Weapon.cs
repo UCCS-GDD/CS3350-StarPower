@@ -148,6 +148,7 @@ public class Weapon : MonoBehaviour
             
             // set the source of the proj to the parent gameObject
             proj.source = transform.parent.transform.parent.gameObject;
+            proj.type = transform.parent.transform.parent.gameObject.GetComponent<Ship>().type;
             
             // play laser sound effect 
             SoundManager.instance.PlaySound(SoundEffect.laser, GameData.laserVolume);
