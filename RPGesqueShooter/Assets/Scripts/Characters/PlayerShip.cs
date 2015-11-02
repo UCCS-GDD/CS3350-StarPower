@@ -33,7 +33,7 @@ namespace Assets.Scripts
             PrimaryWeapon = PlayerData.PrimaryWeapon;
 
             // set the SecondaryWeapon to the players SecondaryWeapon
-            SecondaryWeapon = PlayerData.SecondaryWeapon;
+            SecondaryWeapon = PlayerData.SecondaryWeapon;            
         }
 
         // Use this for initialization
@@ -57,6 +57,9 @@ namespace Assets.Scripts
                 // add the weapon to the list of secondaryWeapons
                 secondaryWeapons.Add(weapon);
             }
+
+            // set the ship type
+            type = ShipType.Player;
         }
 
         // Called every fixed framerate frame

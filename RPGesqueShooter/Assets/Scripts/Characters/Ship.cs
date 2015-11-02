@@ -54,6 +54,9 @@ public class Ship : MonoBehaviour
     // Variable for shieldCollider
     protected Collider2D shieldCollider;
 
+    // what type of ship is this?
+    public ShipType type;
+
 	// Use this for initialization
     protected virtual void Start() 
     {
@@ -155,10 +158,13 @@ public class Ship : MonoBehaviour
         Destroy(gameObject);
 
         // play explosion sound
-        SoundManager.instance.PlaySound(SoundEffect.explosion, GameData.explosionVolume);        
-        
-        // set playerScore to +1
-        Score.playerScore++;
+        SoundManager.instance.PlaySound(SoundEffect.explosion, GameData.explosionVolume);
+
+
+
+        // set playerScore to +1 if it isn't the player ship
+        if (type != ShipType.Player)
+            Score.playerScore++;
     }
 
     /// Should return 1f for an average maneuverability, lower values create less responsive handling

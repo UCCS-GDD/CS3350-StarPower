@@ -31,6 +31,9 @@ namespace Assets.Scripts
 
             // get the sprite renderer of this object
             renderer = GetComponent<SpriteRenderer>();
+
+            // set the ship type
+            type = ShipType.Enemy;
         }
 
         // Update is called once per frame
