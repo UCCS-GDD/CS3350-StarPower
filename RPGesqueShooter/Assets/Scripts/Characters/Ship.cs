@@ -131,12 +131,6 @@ public class Ship : MonoBehaviour
         // if collision with with projectile
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            //
-            //Projectile temp = collision.gameObject.GetComponent<Projectile>();
-
-            //
-            //if (temp.source.GetType() != gameObject.GetType())
-            //{
             //  // get the projectile component
                 // apply damage to the specified gameObject
                 collision.gameObject.GetComponent<Projectile>().ApplyDamageTo(this.gameObject);

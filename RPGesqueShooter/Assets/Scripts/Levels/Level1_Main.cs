@@ -191,7 +191,7 @@ public class Level1_Main : MonoBehaviour {
 
     public void SpawnEnemy(GameObject enemy)
     {
-        float x = UnityEngine.Random.Range(-8f, 8f);
+        float x = UnityEngine.Random.Range(-6.5f, 6.5f);
         float y = 6f;
 
         var spawn = Instantiate(enemy);
