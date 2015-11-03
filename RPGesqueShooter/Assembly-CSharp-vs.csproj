@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\SmokeScript.cs" />
      <Compile Include="Assets\Scripts\BackdropScroll.cs" />
      <Compile Include="Assets\Scripts\Backend\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Backend\Soundtrack.cs" />

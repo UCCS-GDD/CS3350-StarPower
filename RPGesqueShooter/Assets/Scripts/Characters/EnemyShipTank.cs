@@ -52,10 +52,12 @@ namespace Assets.Scripts
             else if (CurrentHP <= (MaxHP * .75f) && CurrentHP > (MaxHP * .5f))
             {
                 renderer.sprite = reducedHealth;
+				isSmoking = true;
             }
             else if (CurrentHP <= (MaxHP * .5f) && CurrentHP > (MaxHP * .25f))
             {
                 renderer.sprite = halfHealth;
+				isOnFire = true;
             }
             else if (CurrentHP <= (MaxHP * .25))
             {

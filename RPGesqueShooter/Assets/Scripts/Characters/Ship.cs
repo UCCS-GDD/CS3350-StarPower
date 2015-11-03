@@ -57,6 +57,16 @@ public class Ship : MonoBehaviour
     // what type of ship is this?
     public ShipType type;
 
+	// bool variable for smoking damage visual effect and associated particle system game object
+	public bool isSmoking;
+	public GameObject smoke;
+	public ParticleSystem smokeSystem;
+
+	//bool variable for fire damage visual effect and associated particle system game object
+	public bool isOnFire;
+	public GameObject fire;
+	public ParticleSystem fireSystem;
+
 	// Use this for initialization
     protected virtual void Start() 
     {
@@ -82,6 +92,30 @@ public class Ship : MonoBehaviour
         if (Shield != null)
             // get the collider2D component
             shieldCollider = Shield.GetComponent<Collider2D>();
+
+		// set smoking and fire effects to false
+		isSmoking = false;
+		isOnFire = false;
+
+		//load particle effect SMOKE
+		smoke = (GameObject)Instantiate(Resources.Load("SmokeParticleSystem"));
+		smoke.transform.parent = this.gameObject.transform;
+
+		smokeSystem = smoke.GetComponent<ParticleSystem> ();
+
+		smokeSystem.Clear ();
+		smokeSystem.Stop();
+
+		//load particle effect FIRE
+		fire = (GameObject)Instantiate(Resources.Load("FireParticleSystem"));
+		fire.transform.parent = this.gameObject.transform;
+		
+		fireSystem = fire.GetComponent<ParticleSystem> ();
+		
+		fireSystem.Clear ();
+		fireSystem.Stop();
+
+
 	}
 	
 	// Update is called once per frame
@@ -120,6 +154,15 @@ public class Ship : MonoBehaviour
         //    shieldUp = false;
         //    SoundManager.instance.PlaySound(SoundEffect.shieldDown, 1f);
         //}
+
+		//Check if the Ship is smoking
+		if (isSmoking == true) {
+			smokeSystem.Play();
+		}
+		//Check if ship is burning
+		if (isOnFire == true) {
+			fireSystem.Play();
+		}
 	}
 
     // FixedUpdate is called 50 times per second
