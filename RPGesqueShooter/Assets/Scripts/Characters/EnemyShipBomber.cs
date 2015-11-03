@@ -93,7 +93,7 @@ namespace Assets.Scripts
 
             //  if object is within certain distance of player
             // check the phases of the game
-            if (Vector3.Distance(transform.position, player.transform.position) > 5f)
+            if (Vector3.Distance(transform.position, player.transform.position) > 6f)
             {
                 switch (phase)
                 {
@@ -126,7 +126,7 @@ namespace Assets.Scripts
             // StartCoroutine -> Object moves towards the GameObject player
             else
             {
-                StartCoroutine(MoveToPlayer(player, 5f));
+                StartCoroutine(MoveToPlayer(player, 10f));
             }
 
             // if the timer is greater than 50

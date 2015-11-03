@@ -13,10 +13,10 @@ public class BossScript : Ship
     public void Awake()
     {
         //// set max health 
-        //this.MaxHP = GameData.deafultBossHealth;
+        this.MaxHP = GameData.defaultBossHealth;
 
         //// set current health
-        //this.CurrentHP = this.MaxHP;
+        this.CurrentHP = this.MaxHP;
     }
 
     // Update is called once per frame
