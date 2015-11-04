@@ -51,6 +51,9 @@ public class Ship : MonoBehaviour
     // list of primaryWeapons
     protected List<Weapon> primaryWeapons = new List<Weapon>();
 
+    // array of pickup items
+    public GameObject[] pickups;
+
     // Variable for shieldCollider
     protected Collider2D shieldCollider;
 
@@ -142,6 +145,19 @@ public class Ship : MonoBehaviour
         // if current health is less than or equal to 0
         if (CurrentHP <= 0)
         {
+            // Variables for random drop
+            int randDrop = Random.Range(0, 10);
+
+            // Variable for random pickup (when we include more pickups)
+            int randPickUp = Random.Range(0, pickups.Length - 1);
+
+            //
+            if(randDrop <= 1)
+            {
+                // instantiate pickup
+                Instantiate(pickups[randPickUp], transform.position, transform.rotation);
+            }
+
             // destory object
             Destroy(gameObject);
 
