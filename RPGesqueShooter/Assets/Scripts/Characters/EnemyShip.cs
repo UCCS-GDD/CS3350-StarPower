@@ -9,13 +9,13 @@ namespace Assets.Scripts
     // Inherits from the Ship class
     class EnemyShip : Ship
     {
-
         SpriteRenderer renderer;
 
         public Sprite fullHealth;
         public Sprite reducedHealth;
         public Sprite halfHealth;
         public Sprite lowHealth;
+        public Rigidbody2D shieldPowerup;
 
         // bool variable for isActive
         bool isActive = false;

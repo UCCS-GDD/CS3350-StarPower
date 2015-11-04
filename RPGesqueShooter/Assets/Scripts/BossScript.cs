@@ -12,10 +12,10 @@ public class BossScript : Ship
     // Used to inititalize any variables or game state before the game starts
     public void Awake()
     {
-        //// set max health 
+        // set max health 
         this.MaxHP = GameData.defaultBossHealth;
 
-        //// set current health
+        // set current health
         this.CurrentHP = this.MaxHP;
     }
 
