@@ -146,7 +146,7 @@ public class Ship : MonoBehaviour
         if (CurrentHP <= 0)
         {
             // Variables for random drop
-            int randDrop = Random.Range(0, 10);
+            int randDrop = Random.Range(0, 20);
 
             // Variable for random pickup (when we include more pickups)
             int randPickUp = Random.Range(0, pickups.Length - 1);
