@@ -190,7 +190,7 @@ public class Ship : MonoBehaviour
     // When another object enters a trigger collider attached to this object
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        // if collision with with projectile
+        // if collision is with projectile
         if (collision.gameObject.CompareTag("Projectile") && type != collision.GetComponent<Projectile>().type)
         {
                 // get the projectile component
