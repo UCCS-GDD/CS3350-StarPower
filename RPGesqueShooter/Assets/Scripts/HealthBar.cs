@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
         // load the HomeScreen scene
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Application.LoadLevel("HomeScreen");
+            Application.LoadLevel("CustomizationScreen");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Assets.Scripts
             // Play menu sounds, load HomeScreen
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
             Score.playerScore = 0;
-            Application.LoadLevel("HomeScreen");
+            Application.LoadLevel("CustomizationScreen");
         }
 
         // Quits the game
