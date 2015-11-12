@@ -11,7 +11,7 @@ namespace Assets.Scripts
         // Starts the game
         public void StartGame()
         {
-            // Play menu sounds, load HomeScreen
+            // Play menu sounds, load CustomizationScreen
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
             Score.playerScore = 0;
             Application.LoadLevel("CustomizationScreen");

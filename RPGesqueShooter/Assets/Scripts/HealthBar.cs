@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
         }
 
         // if the spacebar is down
-        // load the HomeScreen scene
+        // load the CustomizationScreen scene
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Application.LoadLevel("CustomizationScreen");

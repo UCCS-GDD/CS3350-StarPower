@@ -63,8 +63,8 @@ public class SoundManager : MonoBehaviour
             // play sound once
             source.PlayOneShot(explosion, vol);
         }
-        // if sound is laser and NOT on the HomeScreen
-        else if (effect == SoundEffect.laser && Application.loadedLevelName != "HomeScreen")
+        // if sound is laser and NOT on the CustomizationScreen
+        else if (effect == SoundEffect.laser && Application.loadedLevelName != "CustomizationScreen")
         {
             // play sound once
             source.PlayOneShot(laser, vol);

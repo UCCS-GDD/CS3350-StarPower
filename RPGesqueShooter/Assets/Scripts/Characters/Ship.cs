@@ -152,7 +152,7 @@ public class Ship : MonoBehaviour
             int randPickUp = Random.Range(0, pickups.Length - 1);
 
             //
-            if(randDrop <= 1)
+            if (randDrop <= 1)
             {
                 // instantiate pickup
                 Instantiate(pickups[randPickUp], transform.position, transform.rotation);
@@ -217,7 +217,6 @@ public class Ship : MonoBehaviour
 
         // play explosion sound
         SoundManager.instance.PlaySound(SoundEffect.explosion, GameData.explosionVolume);
-
 
 
         // set playerScore to +1 if it isn't the player ship
