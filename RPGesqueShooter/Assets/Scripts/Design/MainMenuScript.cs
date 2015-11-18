@@ -31,5 +31,13 @@ namespace Assets.Scripts
             // Play help sounds
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
         }
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                Application.LoadLevel("BossLevel");
+            }
+        }
     }
 }
