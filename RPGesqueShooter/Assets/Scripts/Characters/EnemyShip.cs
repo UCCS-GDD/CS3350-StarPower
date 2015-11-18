@@ -35,6 +35,7 @@ namespace Assets.Scripts
             // set the ship type
             type = ShipType.Enemy;
 
+            //
 			isSmoking = false;
         }
 
