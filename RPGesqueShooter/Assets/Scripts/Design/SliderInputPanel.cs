@@ -100,5 +100,10 @@ namespace Assets.Scripts
             OnInputChanged(Value);
             OnSliderChanged(Value);
         }
+
+		public bool ChangeCredits(String name, float newValue)
+		{
+			return false;
+		}
     }
 }

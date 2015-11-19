@@ -107,6 +107,9 @@ namespace Assets.Scripts
             // set refireRate to the Slider Components of the RefireRatePanel
             panel = wepPanel.transform.FindChild("RefireRatePanel");
             refireRate = panel.transform.FindChild("Slider").GetComponent<Slider>();
+
+            Credits.instance.oldValue = Credits.CalculateWeaponCost(PrimaryWeapon);
+            Credits.instance.oldValue += Credits.CalculateWeaponCost(SecondaryWeapon);
         }
 
         // When you click on primary weapon in game
