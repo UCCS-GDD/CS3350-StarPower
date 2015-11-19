@@ -42,6 +42,15 @@ public static class GameData {
     public static float explosionVolume = 1f;
 
     //
+    // weapon cost modifiers
+    public static float projectileCountDiv = 200f;
+    public static float spreadOffset = -25f;
+    public static float spreadMult = 30f;
+    public static float burstFireCountMult = 250f;
+    public static float refireRateMult = 1000f;
+    public static float cooldownRateMult = 1000f;
+
+    //
     //
 
     //
@@ -52,7 +61,7 @@ public static class GameData {
     //{
 
     //}
-    
+
     //// loads the previous game from a binary file
     //public void Load()
     //{

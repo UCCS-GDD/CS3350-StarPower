@@ -47,6 +47,7 @@ public class Loot : Projectile
                     if (shield.CurrentShields <= 0)
                     {
                         shield.CurrentShields += 20;
+                        shield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                     }
                     break;
                 // deafult case

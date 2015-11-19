@@ -218,6 +218,7 @@ public class Ship : MonoBehaviour
         // play explosion sound
         SoundManager.instance.PlaySound(SoundEffect.explosion, GameData.explosionVolume);
 
+
         // set playerScore to +1 if it isn't the player ship
         if (type != ShipType.Player)
             Score.playerScore++;

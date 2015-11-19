@@ -343,6 +343,9 @@ namespace Assets.Scripts
         public void UpdateTestShip(bool updatePrimary, float projCount, float spread, WeaponFireMode mode, float cooldown, float refire, float burstCount)
         {
             TestShip.GetComponent<TestShip>().UpdateWeapons(updatePrimary, projCount, spread, mode, cooldown, refire, burstCount);
+
+            var button = transform.parent.FindChild("NavPanel").FindChild("PlayGame_Button").GetComponent<Button>();
+            button.interactable = Credits.instance.currentValue - Credits.instance.oldValue <= Credits.instance.currentCredits;
         }
     }
 }

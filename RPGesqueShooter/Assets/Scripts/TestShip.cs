@@ -71,6 +71,22 @@ namespace Assets.Scripts
                 else
                     weapon.FireEnd();
             }
+
+            //Update upgrade cost
+            UpdateCredits();
+        }
+
+        /// <summary>
+        /// Calculates the current cost of the ship in menu
+        /// </summary>
+        protected void UpdateCredits()
+        {
+            Credits.instance.currentValue = Credits.CalculateWeaponCost(primaryWeapons.First());
+            Credits.instance.currentValue += Credits.CalculateWeaponCost(secondaryWeapons.First());
+
+            //
+            //down here should go the calculations for everything else, shields, weapons etc.
+            //
         }
 
         // Updates the Primary and Secondary Wepaons
