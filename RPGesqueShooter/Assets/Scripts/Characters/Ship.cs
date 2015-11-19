@@ -117,8 +117,6 @@ public class Ship : MonoBehaviour
 		
 		fireSystem.Clear ();
 		fireSystem.Stop();
-
-
 	}
 	
 	// Update is called once per frame
