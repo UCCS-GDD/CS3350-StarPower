@@ -16,7 +16,16 @@ public abstract class Projectile : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-	
+	    SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+
+        if (type == ShipType.Enemy)
+        {
+            renderer.color = new Color(1, 0, 0, 1);
+        }
+        else
+        {
+            renderer.color = new Color(0, 0, 1, 1);
+        }
 	}
 	
 	// Update is called once per frame
