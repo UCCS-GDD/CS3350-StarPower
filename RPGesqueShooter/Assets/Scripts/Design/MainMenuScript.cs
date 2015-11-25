@@ -30,6 +30,13 @@ namespace Assets.Scripts
         {
             // Play help sounds
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+            Application.LoadLevel("HelpMenu");
+        }
+
+        public void MainMenu()
+        {
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+            Application.LoadLevel("MainMenu");
         }
 
         public void Update()
