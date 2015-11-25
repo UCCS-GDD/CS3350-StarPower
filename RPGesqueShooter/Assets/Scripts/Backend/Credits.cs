@@ -38,10 +38,10 @@ public class Credits : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		GetComponent<Text> ().text = "Credits: " + this.currentCredits.ToString ();
+		GetComponent<Text> ().text = "StarPower: " + this.currentCredits.ToString () + " u";
 
         int cost = currentValue - oldValue;
-        currentCost.text = "Upgrade Cost: " + cost;
+        currentCost.text = "Upgrade Cost: " + cost + " u";
 
         if (cost > Credits.instance.currentCredits)
             currentCost.color = Color.red;

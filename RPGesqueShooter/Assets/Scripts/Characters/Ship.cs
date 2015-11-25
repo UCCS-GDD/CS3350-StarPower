@@ -163,11 +163,6 @@ public class Ship : MonoBehaviour
             // position of the ship
             Instantiate(DeathAnim, transform.position, transform.rotation);
         }
-        //if (Shield.CurrentShields <= 0 && shieldUp)
-        //{
-        //    shieldUp = false;
-        //    SoundManager.instance.PlaySound(SoundEffect.shieldDown, 1f);
-        //}
 
 		//Check if the Ship is smoking
 		if (isSmoking == true) {
@@ -204,6 +199,12 @@ public class Ship : MonoBehaviour
 
             // set current health to -10
             CurrentHP -= 10;
+        }
+
+        // if collision is with a shiled pickup
+        if (collision.gameObject.CompareTag("ShieldPowerup")) ;
+        {
+            Shield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
     }
 
