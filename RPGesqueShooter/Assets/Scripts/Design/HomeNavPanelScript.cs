@@ -236,6 +236,7 @@ namespace Assets.Scripts
 
                     // if in the Shield menu
                 case MenuMode.Shield:
+
                     break;
 
                     // if in the Armor menu
@@ -275,6 +276,7 @@ namespace Assets.Scripts
 
                 // if in the Armor menu
                 case MenuMode.Armor:
+
                     break;
 
                 // if in the Engine menu
@@ -313,6 +315,7 @@ namespace Assets.Scripts
 
                 // if in the Engine menu
                 case MenuMode.Engine:
+
                     break;
             }
         }
