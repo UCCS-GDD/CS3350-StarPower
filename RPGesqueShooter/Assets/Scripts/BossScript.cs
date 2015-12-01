@@ -15,7 +15,7 @@ public class BossScript : Ship
     bool isActive = false;
 
     // variable for current state of the boss
-    private BossState currentState = BossState.FullHealth;
+    public BossState currentState = BossState.FullHealth;
 
     // variable for sprite renderer
     SpriteRenderer renderer;
@@ -25,6 +25,12 @@ public class BossScript : Ship
     public Sprite reducedHealth;
     public Sprite halfHealth;
     public Sprite lowHealth;
+
+    // int variable for the phase of the game
+    int phase = 0;
+
+    // int variable for timer of game
+    int timer = 0;
 
     // Used to inititalize any variables or game state before the game starts
     public void Awake()
@@ -52,20 +58,24 @@ public class BossScript : Ship
         if (CurrentHP > (MaxHP * .75f))
         {
             renderer.sprite = fullHealth;
+            currentState = BossState.FullHealth;
         }
         else if (CurrentHP <= (MaxHP * .75f) && CurrentHP > (MaxHP * .5f))
         {
             renderer.sprite = reducedHealth;
+            currentState = BossState.ReducedHealth;
             //isSmoking = true;
         }
         else if (CurrentHP <= (MaxHP * .5f) && CurrentHP > (MaxHP * .25f))
         {
             renderer.sprite = halfHealth;
+            currentState = BossState.HalfHealth;
             //isOnFire = true;
         }
         else if (CurrentHP <= (MaxHP * .25))
         {
             renderer.sprite = lowHealth;
+            currentState = BossState.LowHealth;
         }
 
         // Calls the parent method
@@ -85,6 +95,60 @@ public class BossScript : Ship
                 else
                     weapon.FireEnd();
             }
+
+        //  if object is within certain distance of player
+        // check the phases of the game
+        switch (phase)
+        {
+            // linearly interpolates between the two vectors
+            // the position of the object
+            case 0:
+                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, -.1f), speed);
+                break;
+            // linearly interpolates between the two vectors
+            // the position of the object
+            case 1:
+                transform.position = Vector3.Lerp(transform.position, transform.position, speed);
+                break;
+            // linearly interpolates between the two vectors
+            // the position of the object
+            case 2:
+                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(-.05f, 0), speed);
+                break;
+            // linearly interpolates between the two vectors
+            // the position of the object
+            case 3:
+                transform.position = Vector3.Lerp(transform.position, transform.position, speed);
+                break;
+            // default case
+            default:
+                break;
+        }
+
+        // if the timer is greater than 50
+        if (timer > 50)
+        {
+            // if it is in the third phase
+            // set phase to 0
+            if (phase == 3)
+            {
+                phase = 1;
+            }
+            // if it is in a different phase
+            // increase the phase
+            else
+            {
+                phase++;
+            }
+            // set timer to 0
+            timer = 0;
+        }
+        // if the timer is less than 50
+        // increase the timer
+        else
+        {
+            timer++;
+        }
     }
 
     // Called every fixed framerate frame

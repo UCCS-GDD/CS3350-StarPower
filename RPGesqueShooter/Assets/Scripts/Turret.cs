@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Turret : Ship
+public class Turret : Weapon
 {
     // variable for target object
     public Transform target;
 
     // variable for sprite renderer
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
 
     // variables for the sprites to be used at certain health
     public Sprite fullHealth;
@@ -15,16 +15,15 @@ public class Turret : Ship
     public Sprite halfHealth;
     public Sprite lowHealth;
 
+    public BossScript parent;
+
+    private BossState parentState;
+
     public void Awake()
     {
-        // set max health
-        this.MaxHP = GameData.defaultBossHealth;
-
-        // set current health
-        this.CurrentHP = this.MaxHP;
-
-        // get the sprite renderer of this object
+       // get the sprite renderer of this object
         renderer = GetComponent<SpriteRenderer>();
+        parentState = parent.currentState;
     }
 
     // Use this for initialization
@@ -37,21 +36,21 @@ public class Turret : Ship
     protected override void Update()
     {
         // apply the correct sprite based on the current health
-        if (CurrentHP > (MaxHP * .75f))
+        if (parentState == BossState.FullHealth)
         {
             renderer.sprite = fullHealth;
         }
-        else if (CurrentHP <= (MaxHP * .75f) && CurrentHP > (MaxHP * .5f))
+        else if (parentState == BossState.ReducedHealth)
         {
             renderer.sprite = reducedHealth;
             //isSmoking = true;
         }
-        else if (CurrentHP <= (MaxHP * .5f) && CurrentHP > (MaxHP * .25f))
+        else if (parentState == BossState.HalfHealth)
         {
             renderer.sprite = halfHealth;
             //isOnFire = true;
         }
-        else if (CurrentHP <= (MaxHP * .25))
+        else if (parentState == BossState.LowHealth)
         {
             renderer.sprite = lowHealth;
         }
@@ -70,5 +69,8 @@ public class Turret : Ship
 
         // set the rotation to the angle found
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        //get the parents state
+        parentState = parent.currentState;
     }
 }
