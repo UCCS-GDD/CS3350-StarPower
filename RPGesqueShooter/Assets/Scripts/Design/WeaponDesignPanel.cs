@@ -191,7 +191,7 @@ namespace Assets.Scripts
             // Variable for slider input
             SliderInputPanel panel;
 
-            // Varaibles for weapon
+            // Variables for weapon
             float projCount;
             float burstCount;
             float cooldown;
