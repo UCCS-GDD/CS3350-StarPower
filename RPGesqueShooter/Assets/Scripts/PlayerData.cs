@@ -11,5 +11,6 @@ namespace Assets.Scripts
         public static Weapon PrimaryWeapon;
         public static Weapon SecondaryWeapon;
         public static ShieldModule Shield;
+        public static Engine Engine;
     }
 }

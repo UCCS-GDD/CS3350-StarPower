@@ -112,8 +112,7 @@ namespace Assets.Scripts
             Credits.instance.oldValue += Credits.CalculateWeaponCost(SecondaryWeapon);
         }
 
-        // When you click on primary weapon in game
-        // opens primary weapon menu
+        // Opens primary weapon menu
         public void ClickPrimaryWeapon()
         {
             // play menu sound
@@ -123,7 +122,7 @@ namespace Assets.Scripts
             Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
             temp.text = "Primary Weapon";            
 
-            // check the different menu modes
+            // check the different menus
             switch (mode)
             {
                 // if in the PrimaryWeapon menu
@@ -153,11 +152,18 @@ namespace Assets.Scripts
                 // if in the Shield menu
                 case MenuMode.Shield:
                     break;
+
+                // if in the Armor menu 
+                case MenuMode.Armor:
+                    break;
+
+                // if in the Engine menu 
+                case MenuMode.Engine:
+                    break;
             }
         }
 
-        // When you click on secondary weapon in game
-        // opens secondary weapon menu
+        // Opens secondary weapon menu
         public void ClickSecondaryWeapon()
         {
             // Play menu sound
@@ -167,7 +173,7 @@ namespace Assets.Scripts
             Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
             temp.text = "Secondary Weapon";
 
-            // check the different menu modes
+            // check the different menus
             switch (mode)
             {
                 // if in the PrimaryWeapon menu
@@ -197,23 +203,129 @@ namespace Assets.Scripts
                 // if in the Shield menu
                 case MenuMode.Shield:
                     break;
+
+                // if in the Armor menu
+                case MenuMode.Armor:
+                    break;
+
+                // if in the Engine menu
+                case MenuMode.Engine:
+                    break;
             }
         }
 
-        // When you click on shield on the game
-        // opens the shield menu
+        // Opens the shield menu
         public void ClickShield()
         {
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+
+            // set the text to say "Shield"
+            Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
+            temp.text = "Shield";
+
+            // check the different menus
+            switch (mode)
+            {
+                    // if in the PrimaryWeapon menu
+                case MenuMode.PrimaryWeapon:
+                    break;
+
+                    // if in the SecondaryWeapon menu
+                case MenuMode.SecondaryWeapon:
+                    break;
+
+                    // if in the Shield menu
+                case MenuMode.Shield:
+
+                    break;
+
+                    // if in the Armor menu
+                case MenuMode.Armor:
+                    break;
+
+                    // if in the Engine menu
+                case MenuMode.Engine:
+                    break;
+            }
         }
 
-        // When you click continue on the game
+        // Opens the engine menu 
+        public void ClickEngine()
+        {
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+
+            // set the text to say "Engine"
+            Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
+            temp.text = "Engine";
+
+            // check the different menus
+            switch (mode)
+            {
+                // if in the PrimaryWeapon menu
+                case MenuMode.PrimaryWeapon:
+                    break;
+
+                // if in the SecondaryWeapon menu
+                case MenuMode.SecondaryWeapon:
+                    break;
+
+                // if in the Shield menu
+                case MenuMode.Shield:
+                    break;
+
+                // if in the Armor menu
+                case MenuMode.Armor:
+                    break;
+
+                // if in the Engine menu
+                case MenuMode.Engine:
+
+                    break;
+            }
+        }
+
+        // Opens the armor menu 
+        public void ClickArmor()
+        {
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+
+            // set the text to say "Armor"
+            Text temp = GameObject.FindGameObjectWithTag("WeaponEditLabel").GetComponent<Text>();
+            temp.text = "Armor";
+
+
+            // check the different menus
+            switch (mode)
+            {
+                // if in the PrimaryWeapon menu
+                case MenuMode.PrimaryWeapon:
+                    break;
+
+                // if in the SecondaryWeapon menu
+                case MenuMode.SecondaryWeapon:
+                    break;
+
+                // if in the Shield menu
+                case MenuMode.Shield:
+                    break;
+
+                // if in the Armor menu
+                case MenuMode.Armor:
+
+                    break;
+
+                // if in the Engine menu
+                case MenuMode.Engine:
+                    break;
+            }
+        }
+
         // Go to the first level
         public void ClickContinue()
         {
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
 
-            // check the different menu modes
+            // check the different menus
             switch (mode)
             {
                 // if in the PrimaryWeapon menu
@@ -231,15 +343,28 @@ namespace Assets.Scripts
                 // if in the Shield menu
                 case MenuMode.Shield:
                     break;
+
+                // if in the engine menu
+                case MenuMode.Engine:
+                    break;
+
+                // if in the armor menu
+                case MenuMode.Armor:
+                    break;
             }
             // sets the primary and secondary weapons
             PlayerData.PrimaryWeapon = PrimaryWeapon;
             PlayerData.SecondaryWeapon = SecondaryWeapon;
 
             // does not allow the primary and secondary weapons
-            // to be doestroyed when the next level loads
+            // to be destroyed when the level loads
             DontDestroyOnLoad(PlayerData.PrimaryWeapon);
             DontDestroyOnLoad(PlayerData.SecondaryWeapon);
+
+            // des not allow the shield and engine elements
+            // to be destroyed when the level loads
+            DontDestroyOnLoad(PlayerData.Shield);
+            DontDestroyOnLoad(PlayerData.Engine);
 
             // load the level 1 scene
             Application.LoadLevel("Level1");
@@ -285,6 +410,18 @@ namespace Assets.Scripts
         }
 
         //
+        protected void UpdateShield(ShieldModule shield)
+        {
+            
+        }
+
+        //
+        protected void UpdateEngine(Engine engine)
+        {
+
+        }
+
+        //
         protected void SaveShield()
         {
 
@@ -297,6 +434,8 @@ namespace Assets.Scripts
     {
         PrimaryWeapon,
         SecondaryWeapon,
-        Shield
+        Shield,
+        Engine,
+        Armor
     }
 }
