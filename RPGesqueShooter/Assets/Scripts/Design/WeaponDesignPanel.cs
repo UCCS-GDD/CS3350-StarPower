@@ -96,6 +96,14 @@ namespace Assets.Scripts
             LoadWeapon(PlayerData.PrimaryWeapon);
         }
 
+        public void LoadShield(ShieldModule shield)
+        {
+            SliderInputPanel panel;
+
+            panel = ShieldStrengthPanel.GetComponent<SliderInputPanel>();
+            //panel.transform.FindChild("Slider").GetComponent<Slider>().value = 
+        }
+
         // Load the specified weapon
         public void LoadWeapon(Weapon weapon)
         {
