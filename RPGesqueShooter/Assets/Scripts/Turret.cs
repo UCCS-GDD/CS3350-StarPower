@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Turret : Weapon
+public class Turret : MonoBehaviour
 {
+    // set a trajectory
+    public static Quaternion trajectory;
+    
     // variable for target object
     public Transform target;
 
@@ -33,7 +36,7 @@ public class Turret : Weapon
     }
 
     // Update is called once per frame
-    protected override void Update()
+    protected void Update()
     {
         // apply the correct sprite based on the current health
         if (parentState == BossState.FullHealth)
@@ -56,7 +59,7 @@ public class Turret : Weapon
         }
 
         // Calls the parent method
-        base.Update();
+        //base.Update();
 
         // direction of target
         var dir = target.position - transform.position;
@@ -69,6 +72,7 @@ public class Turret : Weapon
 
         // set the rotation to the angle found
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        trajectory = transform.rotation;
 
         //get the parents state
         parentState = parent.currentState;
