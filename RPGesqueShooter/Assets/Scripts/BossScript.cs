@@ -49,6 +49,8 @@ public class BossScript : Ship
 
         // if the ship is smoking
         isSmoking = false;
+
+        speed = GameData.defaultBossMoveSpeed;
     }
 
     // Update is called once per frame
@@ -103,7 +105,7 @@ public class BossScript : Ship
             // linearly interpolates between the two vectors
             // the position of the object
             case 0:
-                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, -.1f), speed);
+                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(0, -.0125f), speed);
                 break;
             // linearly interpolates between the two vectors
             // the position of the object
@@ -120,19 +122,30 @@ public class BossScript : Ship
             case 3:
                 transform.position = Vector3.Lerp(transform.position, transform.position, speed);
                 break;
+            case 4:
+                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(.1f, 0), speed);
+                break;
             // default case
+            case 5:
+                transform.position = Vector3.Lerp(transform.position, transform.position, speed);
+                break;
+            case 6:
+                transform.position = Vector3.Lerp(transform.position, transform.position + new Vector3(-.1f, 0), speed); break;
+            case 7:
+                transform.position = Vector3.Lerp(transform.position, transform.position, speed);
+                break;
             default:
                 break;
         }
 
         // if the timer is greater than 50
-        if (timer > 50)
+        if (timer > 100)
         {
             // if it is in the third phase
             // set phase to 0
-            if (phase == 3)
+            if (phase == 7)
             {
-                phase = 1;
+                phase = 4;
             }
             // if it is in a different phase
             // increase the phase
