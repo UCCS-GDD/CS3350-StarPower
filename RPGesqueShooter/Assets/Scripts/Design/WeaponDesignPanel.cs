@@ -25,7 +25,6 @@ namespace Assets.Scripts
         Toggle EngineTypeRound;
         Toggle EngineTypeRocket;
 
-
         // GameObjects in which will be available for edit in the panel
         GameObject ProjectileCountPanel;
         GameObject SpreadPanel;
@@ -35,7 +34,7 @@ namespace Assets.Scripts
 
         // GameObject in which will be available for edit in the panel
         GameObject ShieldStrengthPanel;
-        GameObject ShieldRechargeratePanel;
+        GameObject ShieldRechargeRatePanel;
         GameObject EngineSpeedPanel;
 
         // bool for priamry weapon
@@ -77,7 +76,7 @@ namespace Assets.Scripts
 
             // Gets the components for ShieldStrengthPanel, ShieldrechargeRatePanel and EngineSpeedPanel
             ShieldStrengthPanel = transform.FindChild("ShieldStrengthPanel").gameObject;
-            ShieldRechargeratePanel = transform.FindChild("ShieldRechargeRatePanel").gameObject;
+            ShieldRechargeRatePanel = transform.FindChild("ShieldRechargeRatePanel").gameObject;
             EngineSpeedPanel = transform.FindChild("EngineSpeedPanel").gameObject;
 
             // gets the components of the panel and changes the values
@@ -89,7 +88,7 @@ namespace Assets.Scripts
 
             // gets the components of the panel and changes the values
             ShieldStrengthPanel.GetComponent<SliderInputPanel>().OnValueChanged += ShieldStrengthChanged;
-            ShieldRechargeratePanel.GetComponent<SliderInputPanel>().OnValueChanged += ShieldRechargeRateChanged;
+            ShieldRechargeRatePanel.GetComponent<SliderInputPanel>().OnValueChanged += ShieldRechargeRateChanged;
             EngineSpeedPanel.GetComponent<SliderInputPanel>().OnValueChanged += EngineSpeedChanged;
 
             // Loads the primary weapon
@@ -98,10 +97,18 @@ namespace Assets.Scripts
 
         public void LoadShield(ShieldModule shield)
         {
+            // Variable for slider input
             SliderInputPanel panel;
 
+            // get the ShieldStrengthPanel
+            // set the slider value to the shields Strength
             panel = ShieldStrengthPanel.GetComponent<SliderInputPanel>();
-            //panel.transform.FindChild("Slider").GetComponent<Slider>().value = 
+            panel.transform.FindChild("Slider").GetComponent<Slider>().value = shield.ShieldStrength;
+
+            // get the ShieldRechargeRatePanel
+            // set the slider value to the shields RechargeRate
+            panel = ShieldRechargeRatePanel.GetComponent<SliderInputPanel>();
+            panel.transform.FindChild("Slider").GetComponent<Slider>().value = shield.ShieldRechargeRate;
         }
 
         // Load the specified weapon
@@ -355,13 +362,13 @@ namespace Assets.Scripts
         //
         public void ShieldRechargeRateChanged(float newValue)
         {
-
+            
         }
 
         //
         public void EngineSpeedChanged(float newValue)
         {
-
+            
         }
 
         // Update the spread of the weapon
