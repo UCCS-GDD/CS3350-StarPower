@@ -5,10 +5,10 @@ public static class GameData {
 
     //
 	// enemy ship stats
-    public static float bomberEnemyMoveSpeed = 1f;
-    public static float tankEnemyMoveSpeed = 1f;
+    public static float bomberEnemyMoveSpeed = 1.5f;
+    public static float tankEnemyMoveSpeed = .8f;
     public static float defaultEnemyMoveSpeed = 1f;
-    public static float defaultBossMoveSpeed = 1.5f;
+    public static float defaultBossMoveSpeed = .75f;
 
     public static int bomberBaseHealth = 10;
     public static int tankBaseHealth = 80;
