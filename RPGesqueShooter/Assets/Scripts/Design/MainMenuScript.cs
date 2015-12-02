@@ -45,6 +45,11 @@ namespace Assets.Scripts
             {
                 Application.LoadLevel("BossLevel");
             }
+
+			if (Input.GetKeyDown (KeyCode.L)) {
+				Application.LoadLevel("lightningtest");
+			}
+
         }
     }
 }
