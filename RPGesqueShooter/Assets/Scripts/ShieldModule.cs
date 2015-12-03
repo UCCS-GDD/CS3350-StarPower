@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum ShieldColorMode
+{
+    Blue,
+    Purple,
+    Green
+}
+
 public class ShieldModule : MonoBehaviour 
 {
     // Variables for Shield
@@ -10,6 +17,11 @@ public class ShieldModule : MonoBehaviour
     // Variables for Recharge of Shield
     public float RechargePerSecond;
     public float RechargeDelay;
+
+    public float ShieldStrength;
+    public float ShieldRechargeRate;
+
+    public ShieldColorMode ShieldColor;
 
 	// Use this for initialization
 	void Start () 
