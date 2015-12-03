@@ -18,10 +18,6 @@ namespace Assets.Scripts
         // list of secondary weapons
         protected List<Weapon> secondaryWeapons = new List<Weapon>();
 
-        public ShieldModule PrimaryShield;
-
-        public Engine PrimaryEngine;
-
         // Use this for initialization
         protected override void Start()
         {

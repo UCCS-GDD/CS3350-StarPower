@@ -14,28 +14,12 @@ namespace Assets.Scripts
         Toggle FireModeBurst;
         Toggle FireModeAuto;
 
-        // Toggle for the different ship colors 
-        Toggle ShieldColorBlue;
-        Toggle ShieldColorPurple;
-        Toggle ShieldColorGreen;
-
-        // Toggle for the different engine types
-        Toggle EngineTypeSharp;
-        Toggle EngineTypeTriangluar;
-        Toggle EngineTypeRound;
-        Toggle EngineTypeRocket;
-
         // GameObjects in which will be available for edit in the panel
         GameObject ProjectileCountPanel;
         GameObject SpreadPanel;
         GameObject BurstFireCountPanel;
         GameObject CooldownSpeedPanel;
         GameObject RefireRatePanel;
-
-        // GameObject in which will be available for edit in the panel
-        GameObject ShieldStrengthPanel;
-        GameObject ShieldRechargeRatePanel;
-        GameObject EngineSpeedPanel;
 
         // bool for priamry weapon
         public bool isPrimary = true;
@@ -48,24 +32,11 @@ namespace Assets.Scripts
         {
             // gets the FireModePanel
             var FireModePanel = transform.FindChild("FireModePanel").gameObject;
-            var ShieldColorPanel = transform.FindChild("ShieldColorPanel").gameObject;
-            var EngineTypePanel = transform.FindChild("EngineTypePanel").gameObject;
 
             // Gets the Toggle components of the fire modes
             FireModeSingle = FireModePanel.transform.FindChild("Single").gameObject.GetComponent<Toggle>();
             FireModeBurst = FireModePanel.transform.FindChild("Burst").gameObject.GetComponent<Toggle>();
             FireModeAuto = FireModePanel.transform.FindChild("Auto").gameObject.GetComponent<Toggle>();
-
-            // Gets the Toggle componenents of the shield colors
-            ShieldColorBlue = ShieldColorPanel.transform.FindChild("Blue").gameObject.GetComponent<Toggle>();
-            ShieldColorPurple = ShieldColorPanel.transform.FindChild("Purple").gameObject.GetComponent<Toggle>();
-            ShieldColorGreen = ShieldColorPanel.transform.FindChild("Green").gameObject.GetComponent<Toggle>();
-
-            // Gets the Toggle components of the engine types
-            EngineTypeSharp = EngineTypePanel.transform.FindChild("Sharp").gameObject.GetComponent<Toggle>();
-            EngineTypeTriangluar = EngineTypePanel.transform.FindChild("Triangular").gameObject.GetComponent<Toggle>();
-            EngineTypeRound = EngineTypePanel.transform.FindChild("Round").gameObject.GetComponent<Toggle>();
-            EngineTypeRocket = EngineTypePanel.transform.FindChild("Rocket").gameObject.GetComponent<Toggle>();
 
             // Gets the components for ProjectileCountPanel, SpreadPanel, BurstFireCountPanel, CooldownSpeedPanel, RefireRatePanel
             ProjectileCountPanel = transform.FindChild("ProjectileCountPanel").gameObject;
@@ -74,11 +45,6 @@ namespace Assets.Scripts
             CooldownSpeedPanel = transform.FindChild("CooldownSpeedPanel").gameObject;
             RefireRatePanel = transform.FindChild("RefireRatePanel").gameObject;
 
-            // Gets the components for ShieldStrengthPanel, ShieldrechargeRatePanel and EngineSpeedPanel
-            ShieldStrengthPanel = transform.FindChild("ShieldStrengthPanel").gameObject;
-            ShieldRechargeRatePanel = transform.FindChild("ShieldRechargeRatePanel").gameObject;
-            EngineSpeedPanel = transform.FindChild("EngineSpeedPanel").gameObject;
-
             // gets the components of the panel and changes the values
             ProjectileCountPanel.GetComponent<SliderInputPanel>().OnValueChanged += ProjectileCountChanged;
             SpreadPanel.GetComponent<SliderInputPanel>().OnValueChanged += SpreadChanged;
@@ -86,29 +52,8 @@ namespace Assets.Scripts
             CooldownSpeedPanel.GetComponent<SliderInputPanel>().OnValueChanged += CooldownSpeedChanged;
             RefireRatePanel.GetComponent<SliderInputPanel>().OnValueChanged += RefireRateChanged;
 
-            // gets the components of the panel and changes the values
-            ShieldStrengthPanel.GetComponent<SliderInputPanel>().OnValueChanged += ShieldStrengthChanged;
-            ShieldRechargeRatePanel.GetComponent<SliderInputPanel>().OnValueChanged += ShieldRechargeRateChanged;
-            EngineSpeedPanel.GetComponent<SliderInputPanel>().OnValueChanged += EngineSpeedChanged;
-
             // Loads the primary weapon
             LoadWeapon(PlayerData.PrimaryWeapon);
-        }
-
-        public void LoadShield(ShieldModule shield)
-        {
-            // Variable for slider input
-            SliderInputPanel panel;
-
-            // get the ShieldStrengthPanel
-            // set the slider value to the shields Strength
-            panel = ShieldStrengthPanel.GetComponent<SliderInputPanel>();
-            panel.transform.FindChild("Slider").GetComponent<Slider>().value = shield.ShieldStrength;
-
-            // get the ShieldRechargeRatePanel
-            // set the slider value to the shields RechargeRate
-            panel = ShieldRechargeRatePanel.GetComponent<SliderInputPanel>();
-            panel.transform.FindChild("Slider").GetComponent<Slider>().value = shield.ShieldRechargeRate;
         }
 
         // Load the specified weapon
@@ -233,44 +178,6 @@ namespace Assets.Scripts
             UpdateSpread();
         }
 
-        // When the shield color is changed
-        public void OnShieldColorChanged()
-        {
-            if (ShieldColorBlue.isOn)
-            {
-
-            }
-            else if (ShieldColorPurple.isOn)
-            {
-
-            }
-            else if (ShieldColorGreen.isOn)
-            {
-
-            }
-        }
-
-        // When the engine type is changed
-        public void OnEngineTypeChanged()
-        {
-            if (EngineTypeSharp.isOn)
-            {
-
-            }
-            else if (EngineTypeTriangluar.isOn)
-            {
-
-            }
-            else if (EngineTypeRound.isOn)
-            {
-
-            }
-            else if (EngineTypeRocket.isOn)
-            {
-
-            }
-        }
-
         // When the Projectile Count has changed
         public void ProjectileCountChanged(float newValue)
         {
@@ -284,7 +191,7 @@ namespace Assets.Scripts
             // Variable for slider input
             SliderInputPanel panel;
 
-            // Variables for weapon
+            // Varaibles for weapon
             float projCount;
             float burstCount;
             float cooldown;
@@ -351,24 +258,6 @@ namespace Assets.Scripts
         public void RefireRateChanged(float newValue)
         {
             UpdateSpread();
-        }
-
-        //
-        public void ShieldStrengthChanged(float newValue)
-        {
-            
-        }
-
-        //
-        public void ShieldRechargeRateChanged(float newValue)
-        {
-            
-        }
-
-        //
-        public void EngineSpeedChanged(float newValue)
-        {
-            
         }
 
         // Update the spread of the weapon
