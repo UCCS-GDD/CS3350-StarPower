@@ -79,7 +79,10 @@ public class BossScript : Ship
             renderer.sprite = lowHealth;
             currentState = BossState.LowHealth;
         }
-
+        else if (CurrentHP <= 0)
+        {
+            Application.LoadLevel("GameOver");
+        }
         // Calls the parent method
         base.Update();
 

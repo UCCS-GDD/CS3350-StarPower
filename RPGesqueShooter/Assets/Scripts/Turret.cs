@@ -27,6 +27,8 @@ public class Turret : MonoBehaviour
        // get the sprite renderer of this object
         renderer = GetComponent<SpriteRenderer>();
         parentState = parent.currentState;
+
+        target = GameObject.FindGameObjectWithTag("Player").transform.parent;
     }
 
     // Use this for initialization

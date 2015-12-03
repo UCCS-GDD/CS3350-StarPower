@@ -63,6 +63,12 @@ public class Level1_Main : MonoBehaviour {
     float phase5TankEnemyInterval;
 
     //
+    // Phase 6
+    public GameObject bossPrefab;                                   // boss object
+    bool bossSpawned = false;                                                 
+
+
+    //
     // Timers
     float defaultTimer;
     float bomberTimer;
@@ -178,6 +184,9 @@ public class Level1_Main : MonoBehaviour {
                 break;
             case 4:
                 Phase5();
+                break;
+            case 5:
+                Phase6();
                 break;
             default:
                 break;
@@ -405,6 +414,15 @@ public class Level1_Main : MonoBehaviour {
             defaultTimer = 0;
             bomberTimer = 0;
             tankTimer = 0;
+        }
+    }
+
+    public void Phase6()
+    {
+        if (!bossSpawned)
+        {
+            Instantiate(bossPrefab);
+            bossSpawned = true;
         }
     }
 }
