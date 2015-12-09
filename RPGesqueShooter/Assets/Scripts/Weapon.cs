@@ -38,6 +38,11 @@ public class Weapon : MonoBehaviour
         }
     }
 
+	public float ShotDelay
+	{
+		set { shotTimer = value; }
+	}
+
     // Whether or not weapon is firing
     private bool isFiring = false;
 

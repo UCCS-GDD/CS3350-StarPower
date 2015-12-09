@@ -30,14 +30,12 @@ namespace Assets.Scripts
                     // Set damage to the CurrentShields
                     if (shield != null && shield.CurrentShields >= 0)
                     {
-                        Debug.Log("Hit Shield");
                         shield.CurrentShields -= damage;
                     }
                     // if the shield does not exist
                     // Set damage to the ship
                     else
                     {
-                        Debug.Log("Hit Ship");
                         ship.CurrentHP -= damage;
                     }
                     break;

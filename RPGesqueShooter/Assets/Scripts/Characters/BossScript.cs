@@ -41,6 +41,9 @@ public class BossScript : Ship
     // int variable for timer of game
     int timer = 0;
 
+	// this objects collider
+	Collider2D collider;
+
     // Used to inititalize any variables or game state before the game starts
     public void Awake()
     {
@@ -70,11 +73,19 @@ public class BossScript : Ship
 		// set color
 		spriteRenderer.color = new Color (.5f, 0, 0, 0);
 
-		// fade the boss in
-		//StartCoroutine (FadeIn (4f));
+		// set the weapons cold
+		foreach (Weapon wep in primaryWeapons) 
+		{
+			wep.ShotDelay = 4f;
+			Debug.Log(wep);
+		}
 
 		// create portal particle system
-		//var warp = Instantiate (warpParticle);
+		var warp = Instantiate (warpParticle);
+		warp.transform.position = new Vector3 (0, 1.2f, 0);
+
+		collider = GetComponent<Collider2D> ();
+		collider.enabled = false;
     }
 
     // Update is called once per frame
@@ -196,29 +207,6 @@ public class BossScript : Ship
     // Called every fixed framerate frame
     public void FixedUpdate()
     {
-        // switchess through the different states of the boss
-        switch (currentState)
-        {
-            // if boss has full health
-            case BossState.FullHealth:
-                break;
-
-            // if boss has reduced health
-            case BossState.ReducedHealth:
-                break;
-
-            // if boss has half health
-            case BossState.HalfHealth:
-                break;
-
-            // if boss has low health
-            case BossState.LowHealth:
-                break;
-
-            // default case
-            default:
-                break;
-        }
         // clamps the boss within the window
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -5.0f, 5.0f), Mathf.Clamp(transform.position.y, 1.0f, 4.0f));
     }
@@ -241,5 +229,7 @@ public class BossScript : Ship
 
 			yield return null;
 		} while (current <= colortimer);
+
+		collider.enabled = true;
 	}
 }

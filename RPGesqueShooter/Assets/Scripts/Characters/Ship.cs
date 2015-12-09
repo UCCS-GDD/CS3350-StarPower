@@ -201,7 +201,7 @@ public class Ship : MonoBehaviour
             CurrentHP -= 10;
         }
 
-        // if collision is with a shiled pickup
+        // if collision is with a shield pickup
         if (collision.gameObject.CompareTag("ShieldPowerup"))
         {
             Shield.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);

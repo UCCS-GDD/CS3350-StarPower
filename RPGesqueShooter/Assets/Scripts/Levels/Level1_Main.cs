@@ -65,7 +65,8 @@ public class Level1_Main : MonoBehaviour {
     //
     // Phase 6
     public GameObject bossPrefab;                                   // boss object
-    bool bossSpawned = false;                                                 
+    bool bossSpawned = false;
+	GameObject boss;
 
 
     //
@@ -74,6 +75,7 @@ public class Level1_Main : MonoBehaviour {
     float bomberTimer;
     float tankTimer;
     float OneSecondTimer;
+	float endTimer;
 
     public void Awake()
     {
@@ -160,6 +162,7 @@ public class Level1_Main : MonoBehaviour {
         bomberTimer = 0;
         tankTimer = 0;
         OneSecondTimer = 0;
+		endTimer = 0;
     }
 
     public void Update()
@@ -191,6 +194,16 @@ public class Level1_Main : MonoBehaviour {
             default:
                 break;
         }
+
+		// check if the boss was killed
+		if (bossSpawned && boss == null) 
+		{
+			endTimer += Time.deltaTime;
+			if (endTimer >= 2)
+			{
+				Application.LoadLevel("GameOver");
+			}
+		}
 
         defaultTimer += Time.deltaTime;
         bomberTimer += Time.deltaTime;
@@ -421,7 +434,7 @@ public class Level1_Main : MonoBehaviour {
     {
         if (!bossSpawned)
         {
-            Instantiate(bossPrefab);
+            boss = Instantiate(bossPrefab);
             bossSpawned = true;
         }
     }
