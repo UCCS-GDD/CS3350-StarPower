@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
     public Transform target;
 
     // variable for sprite renderer
-    new SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
 
     // variables for the sprites to be used at certain health
     public Sprite fullHealth;
@@ -25,7 +25,7 @@ public class Turret : MonoBehaviour
     public void Awake()
     {
        // get the sprite renderer of this object
-        renderer = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
         parentState = parent.currentState;
 
         target = GameObject.FindGameObjectWithTag("Player").transform.parent;
@@ -43,21 +43,21 @@ public class Turret : MonoBehaviour
         // apply the correct sprite based on the current health
         if (parentState == BossState.FullHealth)
         {
-            renderer.sprite = fullHealth;
+			spriteRenderer.sprite = fullHealth;
         }
         else if (parentState == BossState.ReducedHealth)
         {
-            renderer.sprite = reducedHealth;
+			spriteRenderer.sprite = reducedHealth;
             //isSmoking = true;
         }
         else if (parentState == BossState.HalfHealth)
         {
-            renderer.sprite = halfHealth;
+			spriteRenderer.sprite = halfHealth;
             //isOnFire = true;
         }
         else if (parentState == BossState.LowHealth)
         {
-            renderer.sprite = lowHealth;
+			spriteRenderer.sprite = lowHealth;
         }
 
         // Calls the parent method

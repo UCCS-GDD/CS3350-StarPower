@@ -18,7 +18,9 @@ public class BossScript : Ship
     public BossState currentState = BossState.FullHealth;
 
     // variable for sprite renderer
-    SpriteRenderer renderer;
+    SpriteRenderer spriteRenderer;
+	SpriteRenderer spriteRendererTurret0;
+	SpriteRenderer spriteRendererTurret1;
 
     // variables for the sprites to be used at certain health
     public Sprite fullHealth;
@@ -40,7 +42,7 @@ public class BossScript : Ship
     int timer = 0;
 
     // Used to inititalize any variables or game state before the game starts
-    public void Start()
+    public void Awake()
     {
         // set max health 
         this.MaxHP = GameData.defaultBossHealth;
@@ -48,8 +50,14 @@ public class BossScript : Ship
         // set current health of the boss
         this.CurrentHP = this.MaxHP;
 
+		// get turret children
+		turret0 = transform.GetChild (0).gameObject;
+		turret1 = transform.GetChild (1).gameObject;
+
         // get the sprite renderer of this object
-        renderer = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		spriteRendererTurret0 = turret0.GetComponent<SpriteRenderer>();
+		spriteRendererTurret1 = turret1.GetComponent<SpriteRenderer>();
 
         // set the ship type of the boss
         type = ShipType.Enemy;
@@ -59,8 +67,11 @@ public class BossScript : Ship
 
         speed = GameData.defaultBossMoveSpeed;
 
+		// set color
+		spriteRenderer.color = new Color (.5f, 0, 0, 0);
+
 		// fade the boss in
-		StartCoroutine (FadeIn (4f));
+		//StartCoroutine (FadeIn (4f));
 
 		// create portal particle system
 		//var warp = Instantiate (warpParticle);
@@ -69,27 +80,29 @@ public class BossScript : Ship
     // Update is called once per frame
     protected override void Update()
     {
+		StartCoroutine (FadeIn (4f));
+
         // apply the correct sprite based on the current health
         if (CurrentHP > (MaxHP * .75f))
         {
-            renderer.sprite = fullHealth;
+			spriteRenderer.sprite = fullHealth;
             currentState = BossState.FullHealth;
         }
         else if (CurrentHP <= (MaxHP * .75f) && CurrentHP > (MaxHP * .5f))
         {
-            renderer.sprite = reducedHealth;
+			spriteRenderer.sprite = reducedHealth;
             currentState = BossState.ReducedHealth;
             //isSmoking = true;
         }
         else if (CurrentHP <= (MaxHP * .5f) && CurrentHP > (MaxHP * .25f))
         {
-            renderer.sprite = halfHealth;
+			spriteRenderer.sprite = halfHealth;
             currentState = BossState.HalfHealth;
             //isOnFire = true;
         }
         else if (CurrentHP <= (MaxHP * .25))
         {
-            renderer.sprite = lowHealth;
+			spriteRenderer.sprite = lowHealth;
             currentState = BossState.LowHealth;
         }
         else if (CurrentHP <= 0)
@@ -216,17 +229,17 @@ public class BossScript : Ship
         isActive = true;
     }
 
-	IEnumerator FadeIn(float timer)
+	IEnumerator FadeIn(float colortimer)
 	{
-		float current = 0;
+		float current = 0f;
 
 		do {
-			turret0.GetComponent<SpriteRenderer> ().color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / timer);
-			turret1.GetComponent<SpriteRenderer> ().color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / timer);
-			GetComponent<SpriteRenderer> ().color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / timer);
+			spriteRendererTurret0.color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / colortimer);
+			spriteRendererTurret1.color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / colortimer);
+			spriteRenderer.color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / colortimer);
 			current += Time.deltaTime;
 
 			yield return null;
-		} while (current <= timer);
+		} while (current <= colortimer);
 	}
 }
