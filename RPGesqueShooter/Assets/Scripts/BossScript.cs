@@ -26,6 +26,13 @@ public class BossScript : Ship
     public Sprite halfHealth;
     public Sprite lowHealth;
 
+	// prefab for warp particle system
+	public GameObject warpParticle;
+
+	// objects for the turrets
+	public GameObject turret0;
+	public GameObject turret1;
+
     // int variable for the phase of the game
     int phase = 0;
 
@@ -51,6 +58,12 @@ public class BossScript : Ship
         isSmoking = false;
 
         speed = GameData.defaultBossMoveSpeed;
+
+		// fade the boss in
+		StartCoroutine (FadeIn (4f));
+
+		// create portal particle system
+		//var warp = Instantiate (warpParticle);
     }
 
     // Update is called once per frame
@@ -202,4 +215,20 @@ public class BossScript : Ship
     {
         isActive = true;
     }
+
+	IEnumerator FadeIn(float timer)
+	{
+		float current = 0;
+
+		do {
+			turret0.GetComponent<SpriteRenderer> ().color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / timer);
+			turret1.GetComponent<SpriteRenderer> ().color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / timer);
+			GetComponent<SpriteRenderer> ().color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / timer);
+			current += Time.deltaTime;
+
+			yield return null;
+		} while (current <= timer);
+
+
+	}
 }
