@@ -40,7 +40,7 @@ public class BossScript : Ship
     int timer = 0;
 
     // Used to inititalize any variables or game state before the game starts
-    public void Awake()
+    public void Start()
     {
         // set max health 
         this.MaxHP = GameData.defaultBossHealth;
@@ -228,7 +228,5 @@ public class BossScript : Ship
 
 			yield return null;
 		} while (current <= timer);
-
-
 	}
 }

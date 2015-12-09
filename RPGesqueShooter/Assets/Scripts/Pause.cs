@@ -13,14 +13,14 @@ public class Pause : MonoBehaviour
 		{
 			if (paused)			
 			{
-				Time.timeScale = 1f;
+				//Time.timeScale = 1f;
 				canvas.GetComponent<CanvasGroup>().alpha = 0f;
 				canvas.GetComponent<CanvasGroup>().interactable = false;
 				canvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
 			}
 			else
 			{
-				Time.timeScale = 0f;
+				//Time.timeScale = 0f;
 				canvas.GetComponent<CanvasGroup>().alpha = 1f;
 				canvas.GetComponent<CanvasGroup>().interactable = true;
 				canvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
