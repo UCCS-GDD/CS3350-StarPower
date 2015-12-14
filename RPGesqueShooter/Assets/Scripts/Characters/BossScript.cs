@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public enum BossState
 {
@@ -34,6 +35,10 @@ public class BossScript : Ship
 	// objects for the turrets
 	public GameObject turret0;
 	public GameObject turret1;
+
+    // health bar prefab
+    public CanvasGroup healthBarSystem;
+    Image healthBar;
 
     // int variable for the phase of the game
     int phase = 0;
@@ -84,6 +89,10 @@ public class BossScript : Ship
 		var warp = Instantiate (warpParticle);
 		warp.transform.position = new Vector3 (0, 1.2f, 0);
 
+        // setup healthbar system
+        healthBarSystem = GameObject.FindGameObjectWithTag("BossHealthContainer").GetComponent<CanvasGroup>();
+        healthBar = GameObject.FindGameObjectWithTag("BossHealthFill").GetComponent<Image>();
+
 		collider = GetComponent<Collider2D> ();
 		collider.enabled = false;
     }
@@ -92,6 +101,11 @@ public class BossScript : Ship
     protected override void Update()
     {
 		StartCoroutine (FadeIn (4f));
+
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = CurrentHP / MaxHP;
+        }
 
         // apply the correct sprite based on the current health
         if (CurrentHP > (MaxHP * .75f))
@@ -225,6 +239,7 @@ public class BossScript : Ship
 			spriteRendererTurret0.color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / colortimer);
 			spriteRendererTurret1.color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / colortimer);
 			spriteRenderer.color = Color.Lerp (new Color (.5f, 0, 0, 0), new Color (1, 1, 1, 1), current / colortimer);
+            healthBarSystem.alpha = Mathf.Lerp(0, 1, current / colortimer);
 			current += Time.deltaTime;
 
 			yield return null;
