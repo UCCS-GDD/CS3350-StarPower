@@ -14,7 +14,7 @@ namespace Assets.Scripts
             // Play menu sounds, load CustomizationScreen
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
             Score.playerScore = 0;
-            Application.LoadLevel("CustomizationScreen");
+            Application.LoadLevel("MissionSelect");
         }
 
         // Quits the game
