@@ -184,14 +184,15 @@ public class Ship : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         // if collision is with projectile
-        if (collision.gameObject.CompareTag("Projectile") && type != collision.GetComponent<Projectile>().type)
+        if (collision.gameObject.CompareTag("Projectile") && type != collision.gameObject.GetComponent<Projectile>().type)
         {
                 // get the projectile component
                 // apply damage to the specified gameObject
                 collision.gameObject.GetComponent<Projectile>().ApplyDamageTo(this.gameObject);
+                Debug.Log("Bullet Collide");
         }
         // if collision is with Ship
-        if (collision.gameObject.CompareTag("Ship"))
+        if (collision.gameObject.CompareTag("Ship") && type != collision.gameObject.GetComponent<Ship>().type)
         {
             // get the ship component
             // set the Current health to -10
@@ -199,6 +200,8 @@ public class Ship : MonoBehaviour
 
             // set current health to -10
             CurrentHP -= 10;
+
+            Debug.Log("Ship Collide");
         }
 
         // if collision is with a shield pickup
