@@ -33,6 +33,13 @@ namespace Assets.Scripts
             Application.LoadLevel("HelpMenu");
         }
 
+        public void ViewCredits()
+        {
+            // Play help sounds
+            SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+            Application.LoadLevel("Credits");
+        }
+
         public void MainMenu()
         {
             SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
