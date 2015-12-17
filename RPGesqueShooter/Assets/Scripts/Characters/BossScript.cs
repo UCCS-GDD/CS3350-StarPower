@@ -49,6 +49,10 @@ public class BossScript : Ship
 	// this objects collider
 	Collider2D collider;
 
+    // music data
+    public AudioSource soundtrack;
+    public AudioClip bossTheme;
+
     // Used to inititalize any variables or game state before the game starts
     public void Awake()
     {
@@ -95,6 +99,12 @@ public class BossScript : Ship
 
 		collider = GetComponent<Collider2D> ();
 		collider.enabled = false;
+
+        soundtrack = GameObject.FindGameObjectWithTag("Soundtrack").GetComponent<AudioSource>();
+        soundtrack.clip = bossTheme;
+        soundtrack.Play();
+        soundtrack.volume = 1f;
+        
     }
 
     // Update is called once per frame

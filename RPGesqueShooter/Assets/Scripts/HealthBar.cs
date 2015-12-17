@@ -22,12 +22,5 @@ public class HealthBar : MonoBehaviour
         {
             Application.LoadLevel("GameOver");
         }
-
-        // if the spacebar is down
-        // load the CustomizationScreen scene
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Application.LoadLevel("CustomizationScreen");
-        }
     }
 }
