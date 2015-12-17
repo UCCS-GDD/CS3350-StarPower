@@ -16,6 +16,7 @@ public class GameOverMenu : MonoBehaviour
     public void NewGame()
     {
         SoundManager.instance.PlaySound(SoundEffect.menuSelect, GameData.menuSelectVolume);
+        Score.playerScore = 0;
         Application.LoadLevel("CustomizationScreen");
     }
 
